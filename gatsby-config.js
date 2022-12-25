@@ -1,6 +1,7 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+<<<<<<< HEAD
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV || "production"}`,
@@ -9,10 +10,13 @@ require("dotenv").config({
 const languages = { "en-US": "en", "vi-VN": "vi" };
 const defaultLanguage = "en-US";
 
+=======
+>>>>>>> 244d19d (Initial commit from gatsby)
 module.exports = {
   siteMetadata: {
     title: `training-gatsby-2`,
     siteUrl: `https://www.yourdomain.tld`,
+<<<<<<< HEAD
     menu: [
       {
         name: "home",
@@ -618,3 +622,8 @@ module.exports = {
     // },
   ],
 };
+=======
+  },
+  plugins: [],
+}
+>>>>>>> 244d19d (Initial commit from gatsby)

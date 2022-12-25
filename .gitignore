@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -129,6 +130,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+=======
+node_modules/
+.cache/
+public
+>>>>>>> 244d19d (Initial commit from gatsby)
 =======
 node_modules/
 .cache/
