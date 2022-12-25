@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -142,10 +143,14 @@ node_modules/
 public
 >>>>>>> 244d19d (Initial commit from gatsby)
 =======
+=======
+>>>>>>> ef0878a (Initial commit from gatsby)
 node_modules/
 .cache/
 public
 =======
+=======
+>>>>>>> a8eae65 (Initial commit from gatsby)
 # Logs
 logs
 *.log
@@ -276,5 +281,16 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+<<<<<<< HEAD
 >>>>>>> d92a5d2 (Initial commit)
+<<<<<<< HEAD
 >>>>>>> fe1f776 (Initial commit)
+=======
+=======
+=======
+node_modules/
+.cache/
+public
+>>>>>>> 244d19d (Initial commit from gatsby)
+>>>>>>> a8eae65 (Initial commit from gatsby)
+>>>>>>> ef0878a (Initial commit from gatsby)

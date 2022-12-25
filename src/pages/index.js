@@ -326,4 +326,8 @@ const IndexPage = () => {
 export default IndexPage
 
 export const Head = () => <title>Home Page</title>
+<<<<<<< HEAD
 >>>>>>> 244d19d (Initial commit from gatsby)
+=======
+>>>>>>> a8eae65 (Initial commit from gatsby)
+>>>>>>> ef0878a (Initial commit from gatsby)

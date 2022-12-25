@@ -1,12 +1,19 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # theme-ui-preset-roxine
 =======
 =======
 >>>>>>> 244d19d (Initial commit from gatsby)
 =======
 >>>>>>> fe1f776 (Initial commit)
+=======
+=======
+# theme-ui-preset-roxine
+=======
+>>>>>>> a8eae65 (Initial commit from gatsby)
+>>>>>>> ef0878a (Initial commit from gatsby)
 <p align="center">
   <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
@@ -63,6 +70,7 @@ Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cl
 [<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 244d19d (Initial commit from gatsby)
 =======
 >>>>>>> 244d19d (Initial commit from gatsby)
@@ -71,3 +79,11 @@ Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cl
 # theme-ui-preset-roxine
 >>>>>>> d92a5d2 (Initial commit)
 >>>>>>> fe1f776 (Initial commit)
+=======
+=======
+# theme-ui-preset-roxine
+>>>>>>> d92a5d2 (Initial commit)
+=======
+>>>>>>> 244d19d (Initial commit from gatsby)
+>>>>>>> a8eae65 (Initial commit from gatsby)
+>>>>>>> ef0878a (Initial commit from gatsby)

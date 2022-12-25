@@ -48,6 +48,10 @@
     "gatsby": "^5.3.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+<<<<<<< HEAD
 >>>>>>> 244d19d (Initial commit from gatsby)
+=======
+>>>>>>> a8eae65 (Initial commit from gatsby)
+>>>>>>> ef0878a (Initial commit from gatsby)
   }
 }
