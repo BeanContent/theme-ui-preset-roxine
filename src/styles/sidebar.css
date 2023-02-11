@@ -1,0 +1,150 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    background: #ffffff;
+    width: 340px;
+    overflow: auto;
+    transition: all 1s ease;
+    z-index: 999;
+    visibility: hidden;
+}
+
+.sidebar>.sidebar__top {}
+
+.sidebar>.sidebar__top>.sidebar__top-close>a {
+    display: block;
+    position: relative;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    letter-spacing: 1.3px;
+    color: #655565;
+}
+
+.sidebar>.sidebar__top>.sidebar__top-close>a>i {
+    text-align: center;
+    color: #655565;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-10px);
+    font-size: 15px;
+    transition: all .25s ease;
+}
+
+.sidebar>.sidebar__top>.sidebar__top-close>a:hover>i {
+    visibility: visible;
+    opacity: 1.0;
+    transform: translateX(1px);
+}
+
+.sidebar>.sidebar__top>.sidebar__top-social {
+    display: flex;
+    font-weight: bold;
+    flex-direction: column;
+    border-top: 1px solid rgba(243, 243, 243, 0.897);
+    border-bottom: 1px solid rgba(243, 243, 243, 0.897);
+    padding: 25px 20px;
+}
+
+.sidebar>.sidebar__top>.sidebar__top-social>a {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin: 5px 0px;
+    border-radius: 5px;
+    width: 90%;
+    white-space: nowrap;
+    padding: 15px 25px;
+    border: 2px solid white;
+    transition: .25s ease;
+}
+.sidebar>.sidebar__top>.sidebar__top-social>a>p {
+    margin-bottom: 0;
+}
+.sidebar>.sidebar__top>.sidebar__top-social>.google {
+    display: flex;
+    align-items: center;
+    background: #DD4b39;
+}
+
+.sidebar>.sidebar__top>.sidebar__top-social>.google>* {
+    color: white;
+}
+
+.sidebar>.sidebar__top>.sidebar__top-social>.google>i {
+    width: 20px;
+}
+
+.sidebar>.sidebar__top>.sidebar__top-social>.google:hover {
+    background: white;
+    border: 2px solid #DD4b39;
+}
+
+.sidebar>.sidebar__top>.sidebar__top-social>.google:hover>* {
+    color: #DD4b39;
+}
+
+
+.sidebar>.sidebar__top>.sidebar__top-social>.facebook {
+    display: flex;
+    align-items: center;
+
+    background: #3b5998;
+}
+
+.sidebar>.sidebar__top>.sidebar__top-social>.facebook>i {
+    width: 20px;
+}
+
+.sidebar>.sidebar__top>.sidebar__top-social>.facebook>* {
+    color: white;
+}
+
+.sidebar>.sidebar__top>.sidebar__top-social>.facebook:hover {
+    background: white;
+    border: 2px solid #3b5998;
+}
+
+.sidebar>.sidebar__top>.sidebar__top-social>.facebook:hover>* {
+    color: #3b5998;
+}
+
+/* SIDEBAR MIDDLE */
+.sidebar>.sidebar__middle {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+}
+
+.sidebar>.sidebar__middle>.sidebar__middle-link {
+    font-size: 14px;
+    color: #575757;
+    padding: 20px 20px;
+    letter-spacing: 1.3px;
+    border-bottom: 1px solid rgba(239, 239, 239, 0.868);
+}
+
+/* SIDEBAR BOTTOM */
+.sidebar>.sidebar__bottom {
+    display: flex;
+    padding: 10px 20px;
+}
+
+.sidebar>.sidebar__bottom>.sidebar__bottom-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px;
+    padding: 5px 5px;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 13%);
+}
+
+.sidebar>.sidebar__bottom>.sidebar__bottom-link>i {
+    color: #575757;
+    font-size: 19px;
+}
