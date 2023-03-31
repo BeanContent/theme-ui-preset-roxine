@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Suspense } from "react";
 import Layout from "../components/layout"
 import 'animate.css';
 import '../styles/global.css';
@@ -15,27 +16,26 @@ import Dropdown from "../components/dropdown";
 
 
 
-
 const IndexPage = ({ data }) => {
   const quotation = data.allContentfulQuotation.nodes[0];
-  const [isActiveIndex, setIsActiveIndex] = useState(null);
-  const menu = ['Test', 'Test2']
   return (
-    <Layout>
-      <Categories />
-      <Quote quote={quotation} />
-      <Portfolio />
-      <Story />
-      <Culture />
-      <Team />
-      <Analysis />
-    </Layout>
+    <Suspense fallback={<div>Loading ...</div>}>
+      <Layout>
+        <Categories />
+        <Quote quote={quotation} />
+        <Portfolio />
+        <Story />
+        <Culture />
+        <Team />
+        <Analysis />
+      </Layout>
+    </Suspense>
   )
 }
 
 export const query = graphql`
-query HomeQuery {
-  allContentfulQuotation(filter: {posPage: {eq: "home"}}) {
+query HomeQuery($language: String!) {
+  allContentfulQuotation(filter: {posPage: {eq: "home"},node_locale: {eq:$language}}) {
     nodes {
       title
       content

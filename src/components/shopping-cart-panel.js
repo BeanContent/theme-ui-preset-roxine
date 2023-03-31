@@ -20,7 +20,7 @@ import '../styles/shopping-cart.css'
 // ]
 
 
-function ShoppingCart({setOpenCart,isOpenCart}) {
+function ShoppingCart({onMouseLeave,isOpenCart}) {
   const query = useStaticQuery(graphql`
   query ShoppingCartQuery {
     allContentfulProduct {
@@ -42,7 +42,7 @@ function ShoppingCart({setOpenCart,isOpenCart}) {
   }
 
   return (
-    <div onMouseLeave={setOpenCart} style={{display: isOpenCart ? 'block':'none'}} className={isOpenCart ? 'cart animate__animated animate__fadeIn' : 'cart'}>
+    <div style={{display: isOpenCart ? 'block':'none'}} className={isOpenCart ? 'cart animate__animated animate__fadeIn' : 'cart'}>
       <div className="cart__top">
         <h2 className='cart__top-title'>Shopping Cart</h2>
       </div>

@@ -3,7 +3,7 @@ import React from 'react'
 import '../styles/quote.css';
 
 
-function Quote({quote}) {
+function Quote({quote, translation}) {
   const { title, content, posPage, slug, textButton,background } = quote;
   return (
     <section style={{backgroundImage: `url('${background.file.url}')`}} className='quote'>

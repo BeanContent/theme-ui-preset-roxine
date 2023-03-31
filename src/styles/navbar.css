@@ -101,7 +101,6 @@
     display: flex;
     align-items: center;
     position: absolute;
-    gap: 20px;
     position: static;
 }
 
@@ -110,6 +109,7 @@
 }
 
 .navbar__icon>* {
+    padding: 15px;
     height: 100%;
 }
 
@@ -164,8 +164,8 @@
 
     .navbar__icon {
         position: absolute;
-        top: 15px;
-        right: 15px;
+        top: 0;
+        right: 0;
     }
 
     .navbar__icon i {

@@ -3,8 +3,11 @@
  */
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${process.env.NODE_ENV || "production"}`,
 })
+
+const languages = ['en-US', 'vi-VN'];
+const defaultLanguage = 'en-US'
 
 module.exports = {
   siteMetadata: {
@@ -184,7 +187,7 @@ module.exports = {
                 path: '',
                 icon: '',
                 dropdown: null
-              }, 
+              },
             ]
           }
         ]
@@ -516,8 +519,29 @@ module.exports = {
       options: {
         spaceId: 'rzk4ksivnjbj',
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        
       }
-    }
+    }, {
+      resolve: 'gatsby-plugin-react-i18next',
+      options: {
+        languages,
+        defaultLanguage,
+        fallbackLng: defaultLanguage,
+        i18nextOptions: {
+          debug: true,
+          lowerCaseLng: false,
+          interpolation: {
+            escapeValue: false
+          },
+          detection: {
+            order: ['querystring', 'cookie', 'localStorage'],
+          },
+          fallbackNS: 'common',
+          react: {
+            transSupportBasicHtmlNodes: true,
+            transKeepBasicHtmlNodesFor: ['br', 'strong', 'i', 'b', 'small'],
+          }
+        }
+      }
+    },
   ],
 }

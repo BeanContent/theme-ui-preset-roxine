@@ -70,11 +70,12 @@ function Navbar() {
     setIsOpenSearch(!isOpenSearch)
   }
   function openCart(e) {
-    setIsOpenCart(!isOpenCart);
-    
-    // e.target.nextSibling.addEventListener('onmouseleave', (s)=>{
-    //   console.log(s)
-    // })
+    setIsOpenCart(true);
+  }
+  function closeCart(e) {
+    console.log(e)
+    e.stopPropagation();
+    setIsOpenCart(false)
   }
   return (
     <nav className='navbar'>
@@ -86,7 +87,7 @@ function Navbar() {
       {
         isMobile ?
           <>
-            <button onClick={(e) => setTimeout(openNav(e), 2000)} className='navbar__toggler'>
+            <button onMouseOut={e=>openNav(e)} onClick={(e) => setTimeout(openNav(e), 2000)} className='navbar__toggler'>
               <i className="fa fa-bars" aria-hidden="true"></i>
             </button>
             <Link to='/' className="navbar__brand">
@@ -122,9 +123,9 @@ function Navbar() {
       </div>
       <div className="navbar__icon">
         {
-          !isMobile ? <button onMouseEnter={()=>setIsOpenCart(true)} className="navbar__icon-cart">
+          !isMobile ? <button onMouseOut={closeCart} onMouseOver={openCart} className="navbar__icon-cart">
             <i className="custom-icon-cart"></i>
-            <ShoppingCart setOpenCart={()=>setIsOpenCart(false)} isOpenCart={isOpenCart} />
+            <ShoppingCart isOpenCart={isOpenCart} />
           </button> : null
         }
         <button onClick={openSearch} className="navbar__icon-search">
