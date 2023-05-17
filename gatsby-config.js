@@ -6,7 +6,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV || "production"}`,
 })
 
-const languages = ['en-US', 'vi-VN'];
+const languages = {'en-US': 'en', 'vi-VN': 'vi'};
 const defaultLanguage = 'en-US'
 
 module.exports = {
@@ -523,7 +523,7 @@ module.exports = {
     }, {
       resolve: 'gatsby-plugin-react-i18next',
       options: {
-        languages,
+        languages: Object.keys(languages),
         defaultLanguage,
         fallbackLng: defaultLanguage,
         i18nextOptions: {

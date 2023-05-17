@@ -13,15 +13,19 @@ import Team from "../components/team";
 import Analysis from "../components/analysis";
 import { useState } from "react";
 import Dropdown from "../components/dropdown";
+import Caption from "../components/caption";
 
 
 
 const IndexPage = ({ data }) => {
+  const caption = data.allContentfulCaption.nodes[0];
+  const categories = data.allContentfulCategoriesExperts.nodes;
   const quotation = data.allContentfulQuotation.nodes[0];
   return (
     <Suspense fallback={<div>Loading ...</div>}>
       <Layout>
-        <Categories />
+        <Caption data={caption}/>
+        <Categories data={categories}/>
         <Quote quote={quotation} />
         <Portfolio />
         <Story />
@@ -48,6 +52,25 @@ query HomeQuery($language: String!) {
           url
         }
       }
+    }
+  }
+  allContentfulCaption(filter: {node_locale: {eq:$language}}) {
+    nodes {
+      button
+      subtitle
+      title
+      description
+      imageCaption {
+        gatsbyImageData
+      }
+    }
+  }
+  allContentfulCategoriesExperts(sort: {createdAt: ASC},filter: {node_locale: {eq:$language}}) {
+    nodes {
+      description
+      link
+      title
+      iconClass
     }
   }
 }

@@ -1,6 +1,6 @@
 exports.onCreatePage = ({ page, actions }) => {
     const { createPage, deletePage } = actions;
-
+    
     if (!page.context.locale) {
         const language = page.context.i18n.language
         const locale = language === 'en' ? 'en-US' : language;
@@ -9,8 +9,9 @@ exports.onCreatePage = ({ page, actions }) => {
             ...page,
             context: {
                 ...page.context,
-                locale
+                locale,
             }
         })
+        console.log(locale)
     }
 }
