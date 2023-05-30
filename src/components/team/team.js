@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import { graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { jsx, useColorMode } from "theme-ui";
 import toCapitalize from "../../libs/toCapitalize";
@@ -10,7 +9,7 @@ function Team({ data }) {
   let colorMode = useColorMode()[0];
 
   return (
-    <section sx={{ backgroundColor: "background" }} className="team">
+    <section className="team">
       <div className="team__head">
         <h4 sx={{ variant: "text.content" }} className="team__head-subtitle">
           who we are

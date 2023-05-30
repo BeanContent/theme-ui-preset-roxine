@@ -1,14 +1,13 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
 import { Link } from "gatsby";
-import React from "react";
+import { jsx } from "theme-ui";
 import "./category.css";
 function Category({ category }) {
   return (
     <div className="category">
       <div className="category__title">
         <i className={category.iconClass + " category__title-icon"}></i>
-        <Link to={"/"} className="category__title-text">
+        <Link to="/" className="category__title-text">
           {category.title}
         </Link>
       </div>

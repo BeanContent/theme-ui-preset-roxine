@@ -29,7 +29,7 @@ function Galleries({ data }) {
   ];
 
   return (
-    <section sx={{ backgroundColor: "background" }} className="galleries">
+    <section className="galleries">
       <div className="galleries__title">
         <h2 sx={{ variant: "text.content" }} className="galleries__title-text">
           The work
@@ -62,8 +62,8 @@ function Galleries({ data }) {
                     className="list__gallery-image"
                     image={image}
                   />
-                  <Link to="#!" className="list__gallery-fav icon-heart"></Link>
-                  <Link to="#!" className="list__gallery-slug icon-link"></Link>
+                  <Link to="/" className="list__gallery-fav icon-heart"></Link>
+                  <Link to="/" className="list__gallery-slug icon-link"></Link>
                 </div>
               </div>
             );

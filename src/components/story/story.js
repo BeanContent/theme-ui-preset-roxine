@@ -17,7 +17,7 @@ function Story({ data }) {
   } = data;
   let colorMode = useColorMode()[0];
   return (
-    <section sx={{ backgroundColor: "background" }} className="story">
+    <section className="story">
       <div className="story__header">
         <h4 sx={{ variant: "text.content" }} className="story__header-subtitle">
           {subtitle}

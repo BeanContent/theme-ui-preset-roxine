@@ -4,7 +4,7 @@ import { jsx } from "theme-ui";
 import "./quote.css";
 
 function Quote({ quote, translation }) {
-  const { title, content, posPage, slug, textButton, background } = quote;
+  const { title, content, slug, textButton, background } = quote;
   return (
     <section
       style={{ backgroundImage: `url('${background.file.url}')` }}

@@ -1,57 +1,54 @@
 import React, { useEffect } from "react";
-import Swiper from "swiper";
+// import { Swiper } from "swiper";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "./slider.css";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 function Slider({ data }) {
-  useEffect(() => {
-    const nextElm = document.querySelector(".swiper-button-next");
-    const prevElm = document.querySelector(".swiper-button-prev");
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
-      spaceBetween: 25,
-      loop: true,
-      grabCursor: true,
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 0,
-        },
-        520: {
-          slidesPerView: 2,
-          spaceBetween: 10,
-        },
-        950: {
-          slidesPerView: 3,
-        },
-      },
-    });
-    nextElm.addEventListener("click", () => swiper.slideNext());
-    prevElm.addEventListener("click", () => swiper.slidePrev());
-  });
   return (
     <div className="slider__container">
-      <div className="slider mySwiper">
-        <div className="slider__wrapper swiper-wrapper">
-          {data.map((item, index) => {
-            return (
-              <div key={index} className="slider__card swiper-slide">
-                <div
-                  style={{
-                    backgroundImage: `url('${item.profile_img.file.url}')`,
-                  }}
-                  className="slider__card-image"
-                ></div>
-                <div className="slider__card-content">
-                  <h3 className="content__name">{item.fullName}</h3>
-                  <h4 className="content__pos">{item.pos}</h4>
-                </div>
+      <Swiper
+        breakpoints={{
+          "@0": {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          "@0.75": {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          "@1": {
+            slidesPerView: 3,
+            spaceBetween: 25,
+          },
+        }}
+        slidesPerView={3}
+        spaceBetween={20}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="slider__wrapper swiper-wrapper"
+      >
+        {data.map((item, index) => {
+          const img = getImage(item.profile_img.gatsbyImageData);
+          return (
+            <SwiperSlide key={index} className="slider__card swiper-slide">
+              <GatsbyImage image={img} className="slider__card-image" />
+              <div className="slider__card-content">
+                <h3 className="content__name">{item.fullName}</h3>
+                <h4 className="content__pos">{item.pos}</h4>
               </div>
-            );
-          })}
-        </div>
-        <div className="swiper-button-next"></div>
-        <div className="swiper-button-prev"></div>
-        <div className="swiper-pagination"></div>
-      </div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </div>
   );
 }

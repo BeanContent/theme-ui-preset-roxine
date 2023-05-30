@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import { graphql, useStaticQuery } from "gatsby";
 import { jsx } from "theme-ui";
 import blackDivider from "../../images/black-divider.png";
 import "./culture.css";

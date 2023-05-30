@@ -589,28 +589,28 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
-    {
-      resolve: "gatsby-plugin-react-i18next",
-      options: {
-        languages: Object.keys(languages),
-        defaultLanguage,
-        fallbackLng: defaultLanguage,
-        i18nextOptions: {
-          debug: true,
-          lowerCaseLng: false,
-          interpolation: {
-            escapeValue: false,
-          },
-          detection: {
-            order: ["querystring", "cookie", "localStorage"],
-          },
-          fallbackNS: "common",
-          react: {
-            transSupportBasicHtmlNodes: true,
-            transKeepBasicHtmlNodesFor: ["br", "strong", "i", "b", "small"],
-          },
-        },
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-react-i18next",
+    //   options: {
+    //     languages: Object.keys(languages),
+    //     defaultLanguage,
+    //     fallbackLng: defaultLanguage,
+    //     i18nextOptions: {
+    //       debug: true,
+    //       lowerCaseLng: false,
+    //       interpolation: {
+    //         escapeValue: false,
+    //       },
+    //       detection: {
+    //         order: ["querystring", "cookie", "localStorage"],
+    //       },
+    //       fallbackNS: "common",
+    //       react: {
+    //         transSupportBasicHtmlNodes: true,
+    //         transKeepBasicHtmlNodesFor: ["br", "strong", "i", "b", "small"],
+    //       },
+    //     },
+    //   },
+    // },
   ],
 };

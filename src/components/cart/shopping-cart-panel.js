@@ -59,7 +59,7 @@ function ShoppingCart({ onMouseLeave, isOpenCart }) {
           <h2>TOTAL</h2>
           <p>${totalCart()}</p>
         </div>
-        <a href="#" className="cart__bottom-viewcart">
+        <a href="#!" className="cart__bottom-viewcart">
           VIEW CART
         </a>
       </div>

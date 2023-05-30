@@ -1,9 +1,7 @@
 /** @jsx jsx */
-import { Button, jsx, useColorMode } from "theme-ui";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import React from "react";
+import { getImage } from "gatsby-plugin-image";
+import { Container, jsx } from "theme-ui";
 import "./caption.css";
-import { Container, Link } from "theme-ui";
 
 function Caption({ data }) {
   const bgImage = getImage(data.imageCaption.gatsbyImageData);

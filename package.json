@@ -37,7 +37,7 @@
     "react-countup": "^6.4.1",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.2.0",
-    "swiper": "^9.0.2",
+    "swiper": "^9.3.2",
     "theme-ui": "^0.15.7"
   }
 }

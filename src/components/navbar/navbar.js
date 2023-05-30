@@ -1,21 +1,20 @@
 import { graphql, Link, useStaticQuery } from "gatsby";
-import React from "react";
-import Dropdown from "../dropdown/dropdown";
-import MegaMenu from "../mega/mega";
-import "./navbar.css";
+import { StaticImage } from "gatsby-plugin-image";
+import React, { useState } from "react";
 import toUpperCase from "../../libs/toUpperCase";
 import ShoppingCart from "../cart/shopping-cart-panel";
+import Dropdown from "../dropdown/dropdown";
 import Sidebar from "../siderbar/sidebar";
-import { useEffect } from "react";
-import { useState } from "react";
-import { StaticImage } from "gatsby-plugin-image";
 import SwitchTheme from "../switch-theme/toggleModeTheme";
+import "./navbar.css";
+
 function Navbar() {
   const [isActiveIndex, setIsActiveIndex] = useState(null);
   const [isOpenPanel, setIsOpenPanel] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   const [isOpenCart, setIsOpenCart] = useState(false);
-  const isMobile = window.innerWidth <= 768;
+  const isMobile =
+    typeof window !== "undefined" ? window.innerWidth <= 768 : null;
   const data = useStaticQuery(graphql`
     query NavbarQuery {
       allSite {
@@ -52,7 +51,6 @@ function Navbar() {
     }
   `);
   const menu = data.allSite.nodes[0].siteMetadata.menu;
-  useEffect(() => {});
   function openNav(e) {
     e.stopPropagation();
     const navMenu = document.querySelector(".navbar__nav");
@@ -72,7 +70,6 @@ function Navbar() {
     setIsOpenCart(true);
   }
   function closeCart(e) {
-    console.log(e);
     e.stopPropagation();
     setIsOpenCart(false);
   }
@@ -89,9 +86,10 @@ function Navbar() {
         <input placeholder="Type & Press Enter" className="navbar__search" />
         <button
           onClick={openSearch}
-          href="#"
           className="x-search icon-close-round navbar-link navbar__search-close"
-        ></button>
+        >
+          {""}
+        </button>
       </div>
       {isMobile ? (
         <>

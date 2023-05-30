@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from "theme-ui";
-import React from "react";
-import Category from "./category/category";
 import blackDivider from "../../images/black-divider.png";
+import Category from "./category/category";
 
 import "./categories.css";
 
@@ -10,7 +9,7 @@ function Categories({ data }) {
   const colorMode = useColorMode()[0];
 
   return (
-    <section sx={{ backgroundColor: "background" }} className="categories">
+    <section className="categories">
       <div className="categories__subject">
         <h2
           sx={{ variant: "text.content" }}
@@ -33,7 +32,7 @@ function Categories({ data }) {
         <img
           className="categories__subject-divider"
           style={{
-            filter: colorMode == "light" ? "invert(0%)" : "invert(100%)",
+            filter: colorMode === "light" ? "invert(0%)" : "invert(100%)",
           }}
           src={blackDivider}
           alt=""

@@ -34,11 +34,11 @@ const IndexPage = ({ data }) => {
     </Suspense>
   );
 };
-
+// ($language: String!)
 export const query = graphql`
-  query HomeQuery($language: String!) {
+  query HomeQuery {
     allContentfulQuotation(
-      filter: { posPage: { eq: "home" }, node_locale: { eq: $language } }
+      filter: { posPage: { eq: "home" }, node_locale: { eq: "en-US" } }
     ) {
       nodes {
         title
@@ -54,7 +54,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulCaption(filter: { node_locale: { eq: $language } }) {
+    allContentfulCaption(filter: { node_locale: { eq: "en-US" } }) {
       nodes {
         button
         subtitle
@@ -67,7 +67,7 @@ export const query = graphql`
     }
     allContentfulCategoriesExperts(
       sort: { createdAt: ASC }
-      filter: { node_locale: { eq: $language } }
+      filter: { node_locale: { eq: "en-US" } }
     ) {
       nodes {
         description
@@ -76,7 +76,7 @@ export const query = graphql`
         iconClass
       }
     }
-    allContentfulGallery(filter: { node_locale: { eq: $language } }) {
+    allContentfulGallery(filter: { node_locale: { eq: "en-US" } }) {
       nodes {
         name
         id
@@ -86,7 +86,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulStory(filter: { node_locale: { eq: $language } }) {
+    allContentfulStory(filter: { node_locale: { eq: "en-US" } }) {
       nodes {
         content1
         content2
@@ -102,7 +102,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulWork(filter: { node_locale: { eq: $language } }) {
+    allContentfulWork(filter: { node_locale: { eq: "en-US" } }) {
       nodes {
         description
         bgImage {
@@ -118,7 +118,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulMember(filter: { node_locale: { eq: $language } }) {
+    allContentfulMember(filter: { node_locale: { eq: "en-US" } }) {
       nodes {
         fullName
         pos
@@ -126,6 +126,7 @@ export const query = graphql`
           file {
             url
           }
+          gatsbyImageData
         }
       }
     }

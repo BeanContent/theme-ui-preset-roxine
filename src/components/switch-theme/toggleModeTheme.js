@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { Button, Switch, jsx, useColorMode } from "theme-ui";
+import { jsx, useColorMode } from "theme-ui";
 
 const SwitchTheme = (props) => {
   const [mode, setMode] = useColorMode();
 
   return (
-    <Button
+    <button
       className={props.className}
       sx={{
         backgroundColor: "background",
@@ -19,7 +19,7 @@ const SwitchTheme = (props) => {
       }}
     >
       {mode === "light" ? mode.toUpperCase() : "dark".toLocaleUpperCase()}
-    </Button>
+    </button>
     // <button
     //   sx={{ color: "red" }}
     //   {...props}

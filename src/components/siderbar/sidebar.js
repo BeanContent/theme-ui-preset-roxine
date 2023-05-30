@@ -1,7 +1,6 @@
 import { Link } from "gatsby";
 import React, { useEffect } from "react";
 import "./sidebar.css";
-import { Button } from "theme-ui";
 
 function Sidebar({ isOpenPanel, setIsOpen }) {
   const socialList = [
