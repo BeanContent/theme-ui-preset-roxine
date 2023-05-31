@@ -4,22 +4,21 @@ import { Link } from "gatsby";
 import { useState } from "react";
 import { jsx } from "theme-ui";
 import toUpperCase from "../../libs/toUpperCase";
+import useWindowSize from "../../libs/useWindowSize";
 import "./dropdown.css";
 const Dropdown = ({ name, menu = [], isActive, index, onShow }) => {
   const [isActiveIndex, setIsActiveIndex] = useState(null);
-  let isMobile =
-    typeof window !== "undefined" ? window.innerWidth <= 768 : null;
-
+  let windowSize = useWindowSize();
+  let isMobile = windowSize.width <= 768;
   function ELMOutOfViewPort(e) {
     e.stopPropagation();
     const dropdownMenu = e.target.nextElementSibling;
-    const windowWidth = window.innerWidth;
     const totalWidth =
       dropdownMenu.getBoundingClientRect().width +
       dropdownMenu.getBoundingClientRect().x;
-    if (totalWidth > windowWidth) {
+    if (totalWidth > windowSize.width) {
       dropdownMenu.style.left = `${
-        dropdownMenu.getBoundingClientRect().x - windowWidth
+        dropdownMenu.getBoundingClientRect().x - windowSize.width
       }px`;
     }
   }
@@ -66,7 +65,7 @@ const Dropdown = ({ name, menu = [], isActive, index, onShow }) => {
               );
             } else {
               return (
-                <li className="dropdown__menu-item" key={index}>
+                <li key={index} className="dropdown__menu-item">
                   <Link className="item__link" to={item.path}>
                     {toUpperCase(item.name)}
                   </Link>

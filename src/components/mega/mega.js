@@ -21,12 +21,12 @@ function MegaMenu({ name, menu }) {
             : "mega__menu animate__animated animate__fadeIn"
         }
       >
-        {menu.map((item, index) => {
+        {menu.map((item, indexMenu) => {
           return (
-            <div key={index} className="mega__menu-group">
-              {item.dropdown.map((subItem, index) => {
+            <div key={indexMenu} className="mega__menu-group">
+              {item.dropdown.map((subItem, indexItem) => {
                 return (
-                  <div className="group__item" key={index}>
+                  <div className="group__item" key={indexItem}>
                     <div className="group__item-container">
                       <i className={subItem.icon}></i>
                       <Link to={subItem.path} className="group__item-link">

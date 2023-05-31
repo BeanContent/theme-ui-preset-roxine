@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 // import { Swiper } from "swiper";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "./slider.css";
-import "swiper/css";
-import "swiper/css/pagination";
+// import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "./slider.css";
+
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 function Slider({ data }) {
@@ -27,7 +28,7 @@ function Slider({ data }) {
           },
         }}
         slidesPerView={3}
-        spaceBetween={20}
+        spaceBetween={25}
         loop={true}
         pagination={{
           clickable: true,
@@ -40,11 +41,15 @@ function Slider({ data }) {
           const img = getImage(item.profile_img.gatsbyImageData);
           return (
             <SwiperSlide key={index} className="slider__card swiper-slide">
-              <GatsbyImage image={img} className="slider__card-image" />
               <div className="slider__card-content">
                 <h3 className="content__name">{item.fullName}</h3>
                 <h4 className="content__pos">{item.pos}</h4>
               </div>
+              <GatsbyImage
+                alt={item.fullName}
+                image={img}
+                className="slider__card-image"
+              />
             </SwiperSlide>
           );
         })}

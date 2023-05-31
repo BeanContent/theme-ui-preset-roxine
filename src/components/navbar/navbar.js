@@ -6,6 +6,7 @@ import ShoppingCart from "../cart/shopping-cart-panel";
 import Dropdown from "../dropdown/dropdown";
 import Sidebar from "../siderbar/sidebar";
 import SwitchTheme from "../switch-theme/toggleModeTheme";
+import useWindowSize from "../../libs/useWindowSize";
 import "./navbar.css";
 
 function Navbar() {
@@ -13,8 +14,8 @@ function Navbar() {
   const [isOpenPanel, setIsOpenPanel] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   const [isOpenCart, setIsOpenCart] = useState(false);
-  const isMobile =
-    typeof window !== "undefined" ? window.innerWidth <= 768 : null;
+  const windowSize = useWindowSize();
+  const isMobile = windowSize.width <= 768;
   const data = useStaticQuery(graphql`
     query NavbarQuery {
       allSite {

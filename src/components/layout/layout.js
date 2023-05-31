@@ -1,12 +1,11 @@
 /** @jsx jsx */
-import React from "react";
+import { jsx, useColorMode } from "theme-ui";
 import Celebrities from "../celebrities/celebrities";
 import Footer from "../footer/footer";
 import Navbar from "../navbar/navbar";
-import { useColorMode, jsx } from "theme-ui";
 
 function Layout({ children }) {
-  let colorMode = useColorMode()[0];
+  // let colorMode = useColorMode()[0];
 
   return (
     <div

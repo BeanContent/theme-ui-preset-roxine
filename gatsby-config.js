@@ -577,6 +577,9 @@ module.exports = {
       },
     ],
   },
+  flags: {
+    DEV_SSR: false,
+  },
   plugins: [
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",

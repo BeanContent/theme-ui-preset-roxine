@@ -5,11 +5,6 @@
   padding: 50px 0;
 }
 
-.slider {
-  max-width: 1120px;
-  overflow: hidden;
-}
-
 .slider__card {
   display: flex;
   /* display: none !important;  */
@@ -19,7 +14,7 @@
 }
 
 .slider__card-image {
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
   width: 100%;
@@ -27,7 +22,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: -1;
+  z-index: -5;
 }
 
 .slider__card-content {
@@ -38,9 +33,9 @@
   width: 100%;
   align-self: flex-end;
   background-color: #5645ff;
-  transform: translateY(500%);
+  transform: translateY(100%);
   opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease-in-out;
+  transition: transform 0.3s ease, opacity 0.5s ease-in-out;
 }
 
 .slider__card-content > * {
@@ -61,7 +56,7 @@
 }
 
 .slider__card:hover > .slider__card-content {
-  transform: translateY(200%);
+  transform: translateY(-100px);
   opacity: 1;
 }
 
