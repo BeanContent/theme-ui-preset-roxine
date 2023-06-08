@@ -1,72 +1,87 @@
 /** @jsx jsx */
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "gatsby";
 import { useState } from "react";
 import { jsx } from "theme-ui";
 import toUpperCase from "../../libs/toUpperCase";
 import useWindowSize from "../../libs/useWindowSize";
 import "./dropdown.css";
-const Dropdown = ({ name, menu = [], isActive, index, onShow }) => {
-  const [isActiveIndex, setIsActiveIndex] = useState(null);
+import useScroll from "../../libs/isScrolled";
+
+const Dropdown = ({ indexItem, data, activeMenu, handleMenuOpen }) => {
+  // const [isActiveIndex, setIsActiveIndex] = useState(null);
+  const [localActiveMenu, setLocalActiveMenu] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const isScrolled = useScroll(".navbar");
+  const isOpen = activeMenu === indexItem;
   let windowSize = useWindowSize();
-  let isMobile = windowSize.width <= 768;
+  // THIS WILL MOVE MENU IF MENU OUT OF SCREEN
   function ELMOutOfViewPort(e) {
     e.stopPropagation();
+    // setIsActive(isActiveIndex === indexItem);
     const dropdownMenu = e.target.nextElementSibling;
-    const totalWidth =
+    const menuWidth = Math.floor(
       dropdownMenu.getBoundingClientRect().width +
-      dropdownMenu.getBoundingClientRect().x;
-    if (totalWidth > windowSize.width) {
-      dropdownMenu.style.left = `${
-        dropdownMenu.getBoundingClientRect().x - windowSize.width
-      }px`;
+        dropdownMenu.getBoundingClientRect().x
+    );
+    if (menuWidth > windowSize.width) {
+      dropdownMenu.style.left = `${-100}%`;
     }
   }
-  function showByClick(e) {
-    e.stopPropagation();
-    const dropdownMenu = e.target.nextElementSibling;
-    if (isMobile) {
-      dropdownMenu.classList.toggle("show");
-    }
-  }
+
+  const localHandleMenuOpen = (index) => {
+    setLocalActiveMenu((prevMenu) => (prevMenu === index ? null : index));
+  };
+  const toggleMenu = () => {
+    handleMenuOpen(indexItem);
+  };
+  useEffect(() => {
+    setIsMobile(windowSize.width <= 1024);
+  });
+
   return (
     <>
       <a
-        onMouseEnter={(e) => ELMOutOfViewPort(e)}
-        onClick={(e) => {
-          showByClick(e);
-          onShow();
-        }}
+        onMouseEnter={ELMOutOfViewPort}
+        onClick={toggleMenu}
         href="#!"
         className="dropdown__toggle"
       >
-        {toUpperCase(name)}
-        {isMobile ? <i className="icon-ios-more icn-right"></i> : null}
+        {toUpperCase(data.name)}
+        {data.dropdown ? <i className="icon-ios-more icn-right"></i> : null}
       </a>
+      {isOpen}
       {
         <ul
+          // style={{
+          //   display: `${isActive && !isMobile ? "block" : "none"}`,
+          // }}
           className={
-            isActive && isMobile
+            isOpen && isMobile
               ? "show dropdown__menu animate__animated animate__fadeIn"
               : "dropdown__menu animate__animated animate__fadeIn"
           }
         >
-          {menu.map((item, index) => {
+          {data.dropdown.map((item, index) => {
             if (item.dropdown) {
               return (
                 <li key={index} className="dropdown__menu-item">
                   <Dropdown
-                    name={item.name}
-                    menu={item.dropdown}
-                    onShow={() => setIsActiveIndex(index)}
-                    isActive={isActiveIndex === index}
+                    indexItem={index}
+                    data={item}
+                    activeMenu={localActiveMenu}
+                    handleMenuOpen={localHandleMenuOpen}
                   />
                 </li>
               );
             } else {
               return (
                 <li key={index} className="dropdown__menu-item">
-                  <Link className="item__link" to={item.path}>
+                  <Link
+                    sx={{ color: isScrolled && "text" }}
+                    className="item__link"
+                    to={item.path}
+                  >
                     {toUpperCase(item.name)}
                   </Link>
                 </li>

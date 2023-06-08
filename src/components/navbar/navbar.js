@@ -1,21 +1,25 @@
+/** @jsx jsx */
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
+import { Container, jsx } from "theme-ui";
 import toUpperCase from "../../libs/toUpperCase";
+import useWindowSize from "../../libs/useWindowSize";
 import ShoppingCart from "../cart/shopping-cart-panel";
 import Dropdown from "../dropdown/dropdown";
 import Sidebar from "../siderbar/sidebar";
 import SwitchTheme from "../switch-theme/toggleModeTheme";
-import useWindowSize from "../../libs/useWindowSize";
 import "./navbar.css";
+import MegaMenu from "../mega/mega";
+import SearchComponent from "../search-bar/search-bar";
+import useScroll from "../../libs/isScrolled";
 
 function Navbar() {
-  const [isActiveIndex, setIsActiveIndex] = useState(null);
-  const [isOpenPanel, setIsOpenPanel] = useState(false);
-  const [isOpenSearch, setIsOpenSearch] = useState(false);
-  const [isOpenCart, setIsOpenCart] = useState(false);
-  const windowSize = useWindowSize();
-  const isMobile = windowSize.width <= 768;
+  // const [isActiveIndex, setIsActiveIndex] = useState(null);
+  const [isOpenNavbar, setIsOpenNavbar] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(null);
+
   const data = useStaticQuery(graphql`
     query NavbarQuery {
       allSite {
@@ -51,124 +55,149 @@ function Navbar() {
       }
     }
   `);
+  const windowSize = useWindowSize();
+
   const menu = data.allSite.nodes[0].siteMetadata.menu;
-  function openNav(e) {
-    e.stopPropagation();
-    const navMenu = document.querySelector(".navbar__nav");
-    if (navMenu.style.getPropertyValue("max-height") === "0vh") {
-      navMenu.style.maxHeight = "80vh";
-    } else {
-      navMenu.style.maxHeight = "0vh";
-    }
-  }
-  function openSidePanel() {
-    setIsOpenPanel(!isOpenPanel);
-  }
-  function openSearch() {
-    setIsOpenSearch(!isOpenSearch);
-  }
-  function openCart(e) {
-    setIsOpenCart(true);
-  }
-  function closeCart(e) {
-    e.stopPropagation();
-    setIsOpenCart(false);
-  }
-  return (
-    <nav className="navbar">
-      <div
-        style={{ display: isOpenSearch ? "block" : "none" }}
-        className={
-          isOpenSearch
-            ? "navbar__search-container animate__animated animate__fadeIn"
-            : "navbar__search-container"
-        }
-      >
-        <input placeholder="Type & Press Enter" className="navbar__search" />
-        <button
-          onClick={openSearch}
-          className="x-search icon-close-round navbar-link navbar__search-close"
-        >
-          {""}
-        </button>
-      </div>
-      {isMobile ? (
-        <>
-          <button
-            onMouseOut={(e) => openNav(e)}
-            onClick={(e) => setTimeout(openNav(e), 2000)}
-            className="navbar__toggler"
-          >
-            <i className="fa fa-bars" aria-hidden="true"></i>
-          </button>
-          <Link to="/" className="navbar__brand">
-            <StaticImage
-              className="navbar__logo dark"
-              src="../../images/logo-dark.svg"
-              alt="logo-dark"
-            />
-          </Link>
-        </>
-      ) : (
-        <Link to="/" className="navbar__brand">
+  const isScrolled = useScroll(".navbar");
+
+  const handleMenuOpen = (index) => {
+    setActiveMenu((prevMenu) => (prevMenu === index ? null : index));
+  };
+  const handleNavbarOpen = () => {
+    setIsOpenNavbar(!isOpenNavbar);
+  };
+
+  function LogoBrand(props) {
+    if (!props.isMobile) {
+      if (props.isScrolled) {
+        return (
+          <StaticImage
+            className="navbar__logo"
+            src="../../images/logo-dark.svg"
+            alt="logo-brand"
+          />
+        );
+      } else {
+        return (
           <StaticImage
             className="navbar__logo"
             src="../../images/logo.svg"
-            alt="logo-light"
+            alt="logo-brand"
           />
-        </Link>
-      )}
-      <div
-        style={isMobile ? { maxHeight: "0vh" } : null}
-        className="navbar__nav"
-      >
-        <ul className="navbar__nav-list">
-          {menu.map((item, index) => {
-            if (item.dropdown) {
-              return (
-                <li key={index} className="list__item">
-                  <Dropdown
-                    name={item.name}
-                    menu={item.dropdown}
-                    onShow={() => setIsActiveIndex(index)}
-                    isActive={isActiveIndex === index}
-                  />
-                </li>
-              );
-            } else if (item.mega) {
-              return null;
-            } else {
-              return (
-                <li key={index} className="list__item">
-                  <Link to={item.path} className="list__item-link">
-                    {toUpperCase(item.name)}
-                  </Link>
-                </li>
-              );
-            }
-          })}
-        </ul>
-      </div>
-      <div className="navbar__icon">
-        {!isMobile ? (
-          <button
-            onMouseOut={closeCart}
-            onMouseOver={openCart}
-            className="navbar__icon-cart"
-          >
-            <i className="custom-icon-cart"></i>
-            <ShoppingCart isOpenCart={isOpenCart} />
-          </button>
-        ) : null}
-        <button onClick={openSearch} className="navbar__icon-search">
-          <i className="custom-icon-search"></i>
-        </button>
-        <button onClick={openSidePanel} className="navbar__icon-panel">
-          <i className="icon-sort-1"></i>
-        </button>
-        <SwitchTheme className="toggle-theme" />
-      </div>
-      <Sidebar setIsOpen={openSidePanel} isOpenPanel={isOpenPanel} />
+        );
+      }
+    } else {
+      return (
+        <StaticImage
+          className="navbar__logo"
+          src="../../images/logo-dark.svg"
+          alt="logo-brand"
+        />
+      );
+    }
+  }
+
+  useEffect(() => {
+    setIsMobile(windowSize.width <= 1024);
+  });
+
+  return (
+    <nav sx={{ backgroundColor: isScrolled && "white" }} className="navbar">
+      <Container>
+        <div sx={{ padding: "0 20px" }} className="navbar__wrapper">
+          <div className="navbar__left">
+            <button onClick={handleNavbarOpen} className="navbar__toggler">
+              <i className="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <Link to="/" className="navbar__brand">
+              <LogoBrand isMobile={isMobile} isScrolled={isScrolled} />
+            </Link>
+          </div>
+          <div className="navbar__right">
+            <div
+              style={{ maxHeight: isOpenNavbar && isMobile ? "60vh" : null }}
+              className="navbar__nav"
+            >
+              <ul className="navbar__nav-list">
+                {menu.map((item, index) => {
+                  if (item.dropdown) {
+                    return (
+                      <li
+                        sx={{
+                          a: {
+                            color:
+                              (isScrolled && !isMobile) || isMobile
+                                ? "#55565b"
+                                : "white",
+                          },
+                        }}
+                        key={index}
+                        className="list__item animate__animated animate__fadeIn"
+                      >
+                        <Dropdown
+                          indexItem={index}
+                          data={item}
+                          activeMenu={activeMenu}
+                          handleMenuOpen={handleMenuOpen}
+                        />
+                      </li>
+                    );
+                  } else if (item.mega) {
+                    return (
+                      <li
+                        sx={{
+                          a: {
+                            color:
+                              (isScrolled && !isMobile) || isMobile
+                                ? "#55565b"
+                                : "white",
+                          },
+                        }}
+                        key={index}
+                        style={{ position: "unset" }}
+                        className="list__item animate__animated animate__fadeIn"
+                      >
+                        <MegaMenu
+                          indexItem={index}
+                          data={item}
+                          activeMenu={activeMenu}
+                          handleMenuOpen={handleMenuOpen}
+                        />
+                      </li>
+                    );
+                  } else {
+                    return (
+                      <li
+                        sx={{
+                          a: {
+                            color:
+                              (isScrolled && !isMobile) || isMobile
+                                ? "#55565b"
+                                : "white",
+                          },
+                        }}
+                        key={index}
+                        className="list__item animate__animated animate__fadeIn"
+                      >
+                        <Link to={item.path} className="list__item-link">
+                          {toUpperCase(item.name)}
+                        </Link>
+                      </li>
+                    );
+                  }
+                })}
+              </ul>
+            </div>
+
+            <div className="navbar__icon">
+              <ShoppingCart />
+              <SearchComponent />
+              <Sidebar />
+              <SwitchTheme className="toggle-theme" />
+            </div>
+          </div>
+        </div>
+      </Container>
     </nav>
   );
 }

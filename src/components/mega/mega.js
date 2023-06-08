@@ -1,27 +1,32 @@
 import { Link } from "gatsby";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import toUpperCase from "../../libs/toUpperCase";
 import "./mega.css";
-function MegaMenu({ name, menu }) {
-  const [isOpen, setIsOpen] = useState(false);
+import useWindowSize from "../../libs/useWindowSize";
+function MegaMenu({ indexItem, data, activeMenu, handleMenuOpen }) {
+  const isOpen = activeMenu === indexItem;
+  let windowSize = useWindowSize();
+  const [isMobile, setIsMobile] = useState(false);
 
-  function openMega() {
-    setIsOpen(!isOpen);
-  }
-
+  const toggleMenu = () => {
+    handleMenuOpen(indexItem);
+  };
+  useEffect(() => {
+    setIsMobile(windowSize.width <= 1024);
+  },[windowSize]);
   return (
     <>
-      <a onClick={() => openMega()} href="#" className="mega__toggle">
-        {name}
+      <a onClick={toggleMenu} href="#!" className="mega__toggle">
+        {toUpperCase(data.name)}
       </a>
       <div
         className={
-          isOpen
+          isOpen && isMobile
             ? "mega__menu animate__animated animate__fadeIn show"
             : "mega__menu animate__animated animate__fadeIn"
         }
       >
-        {menu.map((item, indexMenu) => {
+        {data.mega.map((item, indexMenu) => {
           return (
             <div key={indexMenu} className="mega__menu-group">
               {item.dropdown.map((subItem, indexItem) => {

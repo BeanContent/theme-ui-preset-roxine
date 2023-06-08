@@ -3,6 +3,9 @@ body {
   /* position: relative; */
   /* overflow-x: hidden; */
 }
+:root {
+  --pd-navbar: 20px 16px;
+}
 * {
   margin: 0;
   padding: 0;
@@ -46,4 +49,14 @@ i {
 }
 section {
   transition: 0.2s ease;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --pd-navbar: 0.4rem 15px;
+  }
+  /* .show {
+    display: block;
+    max-height: fit-content;
+  } */
 }

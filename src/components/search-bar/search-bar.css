@@ -1,0 +1,15 @@
+.search__container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 0 20px;
+  background-color: white;
+}
+
+.search__input {
+  width: 100vw;
+  font-size: 2rem;
+  text-align: center;
+}

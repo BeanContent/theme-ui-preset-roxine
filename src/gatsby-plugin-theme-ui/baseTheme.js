@@ -33,6 +33,12 @@ export const baseTheme = {
       color: "link",
     },
   },
+  layouts: {
+    container: {
+      margin: "auto",
+      height: "100%",
+    },
+  },
   buttons: {
     primary: {
       color: "white", // use the page background color for an inverted effect

@@ -11,7 +11,9 @@ import Quote from "../components/quote/quote";
 import Story from "../components/story/story";
 import Team from "../components/team/team";
 import "../styles/global.css";
+import useWindowSize from "../libs/useWindowSize";
 const IndexPage = ({ data }) => {
+  const windowSize = useWindowSize();
   const culture = data.allContentfulWork.nodes[0];
   const story = data.allContentfulStory.nodes[0];
   const galleries = data.allContentfulGallery.nodes;
@@ -19,6 +21,7 @@ const IndexPage = ({ data }) => {
   const categories = data.allContentfulCategoriesExperts.nodes;
   const quotation = data.allContentfulQuotation.nodes[0];
   const team = data.allContentfulMember.nodes;
+  console.log(windowSize.width);
   return (
     <Suspense fallback={<div>Loading ...</div>}>
       <Layout>

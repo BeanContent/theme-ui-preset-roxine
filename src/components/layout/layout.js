@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, useColorMode } from "theme-ui";
+import { jsx } from "theme-ui";
 import Celebrities from "../celebrities/celebrities";
 import Footer from "../footer/footer";
 import Navbar from "../navbar/navbar";
@@ -12,7 +12,9 @@ function Layout({ children }) {
       sx={{ backgroundColor: "background", transition: ".3s ease-in-out" }}
       className="main__layout"
     >
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
       <main>{children}</main>
       <Celebrities />
       <Footer />
