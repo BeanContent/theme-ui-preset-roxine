@@ -39,3 +39,9 @@
     grid-template-columns: auto auto;
   }
 }
+@media only screen and (max-width: 425px) {
+  .analysis .analysis__list {
+    grid-template-columns: auto ;
+  }
+}
+

@@ -36,7 +36,7 @@ function Analysis() {
     threshold: 0.1, // Set the percentage of visibility needed to trigger the change
   });
   return (
-    <section className="analysis">
+    <section ref={ref} className="analysis">
       <div className="analysis__wrapper">
         <ul className="analysis__list">
           {data.map((item, index) => {
@@ -44,7 +44,7 @@ function Analysis() {
               <li key={index} className="analysis__list-item">
                 <div className="item__wrapper">
                   <span className={item.icon}></span>
-                  <h2 ref={ref} className="item__quantity ">
+                  <h2 className="item__quantity ">
                     {inView && (
                       <CountUp
                         className="animate__animated animate__fadeIn"

@@ -18,6 +18,7 @@ function Navbar() {
   // const [isActiveIndex, setIsActiveIndex] = useState(null);
   const [isOpenNavbar, setIsOpenNavbar] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isSmallMobile, setIsSmallMobile] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
 
   const data = useStaticQuery(graphql`
@@ -99,6 +100,7 @@ function Navbar() {
 
   useEffect(() => {
     setIsMobile(windowSize.width <= 1024);
+    setIsSmallMobile(windowSize.width <= 425)
   });
 
   return (
@@ -190,10 +192,10 @@ function Navbar() {
             </div>
 
             <div className="navbar__icon">
-              <ShoppingCart />
+              {!isMobile && <ShoppingCart />}
               <SearchComponent />
               <Sidebar />
-              <SwitchTheme className="toggle-theme" />
+              {!isSmallMobile && <SwitchTheme className="toggle-theme" />}
             </div>
           </div>
         </div>

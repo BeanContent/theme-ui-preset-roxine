@@ -151,3 +151,8 @@
   color: #575757;
   font-size: 19px;
 }
+@media only screen and (max-width: 425px){
+  /* .sidebar{
+    display: none;
+  } */
+}

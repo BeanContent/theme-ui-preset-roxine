@@ -35,7 +35,7 @@
   /* line-height: 22.5px; */
   font-size: 12px;
 }
-.navbar .navbar__icon button {
+.navbar .navbar__icon > button, .navbar .navbar__icon > div > button {
   padding: var(--pd-navbar);
 }
 /* NAVBAR LEFT */
