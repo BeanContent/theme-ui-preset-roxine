@@ -1,25 +1,26 @@
 /** @jsx jsx */
+
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { useEffect, useState } from "react";
 import { Container, jsx } from "theme-ui";
+import useScroll from "../../libs/isScrolled";
 import toUpperCase from "../../libs/toUpperCase";
-import useWindowSize from "../../libs/useWindowSize";
 import ShoppingCart from "../cart/shopping-cart-panel";
 import Dropdown from "../dropdown/dropdown";
+import MegaMenu from "../mega/mega";
+import SearchComponent from "../search-bar/search-bar";
 import Sidebar from "../siderbar/sidebar";
 import SwitchTheme from "../switch-theme/toggleModeTheme";
 import "./navbar.css";
-import MegaMenu from "../mega/mega";
-import SearchComponent from "../search-bar/search-bar";
-import useScroll from "../../libs/isScrolled";
 
+import useCheckDevice from "../../libs/isMobile";
 function Navbar() {
-  // const [isActiveIndex, setIsActiveIndex] = useState(null);
+  
   const [isOpenNavbar, setIsOpenNavbar] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const [isSmallMobile, setIsSmallMobile] = useState(false);
+  
   const [activeMenu, setActiveMenu] = useState(null);
+  const isMobile = useCheckDevice();
 
   const data = useStaticQuery(graphql`
     query NavbarQuery {
@@ -56,7 +57,6 @@ function Navbar() {
       }
     }
   `);
-  const windowSize = useWindowSize();
 
   const menu = data.allSite.nodes[0].siteMetadata.menu;
   const isScrolled = useScroll(".navbar");
@@ -99,8 +99,9 @@ function Navbar() {
   }
 
   useEffect(() => {
-    setIsMobile(windowSize.width <= 1024);
-    setIsSmallMobile(windowSize.width <= 425)
+    
+    
+    
   });
 
   return (
@@ -195,7 +196,7 @@ function Navbar() {
               {!isMobile && <ShoppingCart />}
               <SearchComponent />
               <Sidebar />
-              {!isSmallMobile && <SwitchTheme className="toggle-theme" />}
+              {!isMobile && <SwitchTheme className="toggle-theme" />}
             </div>
           </div>
         </div>

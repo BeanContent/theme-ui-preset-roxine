@@ -1,5 +1,5 @@
 import "animate.css";
-import { graphql } from "gatsby";
+import { Script, graphql } from "gatsby";
 import React, { Suspense } from "react";
 import Analysis from "../components/analysis/analysis";
 import Caption from "../components/caption/caption";
@@ -12,6 +12,7 @@ import Story from "../components/story/story";
 import Team from "../components/team/team";
 import "../styles/global.css";
 import useWindowSize from "../libs/useWindowSize";
+import Testimonials from "../components/testimonials/testimonials-slider";
 const IndexPage = ({ data }) => {
   const windowSize = useWindowSize();
   const culture = data.allContentfulWork.nodes[0];
@@ -21,7 +22,6 @@ const IndexPage = ({ data }) => {
   const categories = data.allContentfulCategoriesExperts.nodes;
   const quotation = data.allContentfulQuotation.nodes[0];
   const team = data.allContentfulMember.nodes;
-  console.log(windowSize.width);
   return (
     <Suspense fallback={<div>Loading ...</div>}>
       <Layout>
@@ -33,6 +33,7 @@ const IndexPage = ({ data }) => {
         <Culture data={culture} />
         <Team data={team} />
         <Analysis />
+        <Testimonials />
       </Layout>
     </Suspense>
   );
@@ -140,6 +141,7 @@ export default IndexPage;
 export const Head = () => {
   return (
     <>
+
       <link
         href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css"
         rel="stylesheet"

@@ -32,8 +32,8 @@ const data = [
 
 function Analysis() {
   const [ref, inView] = useInView({
-    triggerOnce: false, // Only trigger once when the element becomes visible
-    threshold: 0.1, // Set the percentage of visibility needed to trigger the change
+    triggerOnce: false, 
+    threshold: 0.1, 
   });
   return (
     <section ref={ref} className="analysis">

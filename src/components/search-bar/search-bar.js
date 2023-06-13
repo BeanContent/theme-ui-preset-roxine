@@ -1,14 +1,14 @@
 /** @jsx jsx */
+import { useEffect, useState } from "react";
 import { jsx } from "theme-ui";
-import React, { useEffect, useState } from "react";
-import "./search-bar.css";
+import useCheckDevice from "../../libs/isMobile";
 import useScroll from "../../libs/isScrolled";
-import useWindowSize from "../../libs/useWindowSize";
+import "./search-bar.css";
 
 function SearchComponent() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const windowSize = useWindowSize();
+  
+  const isMobile = useCheckDevice();
 
   const isScrolled = useScroll(".navbar");
 
@@ -16,8 +16,9 @@ function SearchComponent() {
     setIsOpen(!isOpen);
   };
   useEffect(() => {
-    setIsMobile(windowSize.width <= 1024);
-  });
+    
+    
+  },[]);
   return (
     <div className="search">
       <button

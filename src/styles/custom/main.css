@@ -306,22 +306,22 @@ Version: 		1.0.0
 
 .slider.slider-disabled .slider-handle {
 	background-color: #f7f7f7;
-	
-	
-	
-	
-	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#dfdfdf), to(#bebebe));
+	background-image: -webkit-linear-gradient(top, #dfdfdf, #bebebe);
+	background-image: -o-linear-gradient(top, #dfdfdf, #bebebe);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#dfdfdf), to(#bebebe));
+	background-image: linear-gradient(to bottom, #dfdfdf, #bebebe);
 	background-repeat: repeat-x;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DFDFDF', endColorstr='#BEBEBE',GradientType=0);
 }
 
 .slider.slider-disabled .slider-track {
 	background-color: #f7f7f7;
-	
-	
-	
-	
-	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e5e5e5), to(#e9e9e9));
+	background-image: -webkit-linear-gradient(top, #e5e5e5, #e9e9e9);
+	background-image: -o-linear-gradient(top, #e5e5e5, #e9e9e9);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#e5e5e5), to(#e9e9e9));
+	background-image: linear-gradient(to bottom, #e5e5e5, #e9e9e9);
 	background-repeat: repeat-x;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E5E5E5', endColorstr='#E9E9E9',GradientType=0);
 	cursor: not-allowed;
@@ -351,11 +351,11 @@ Version: 		1.0.0
 
 .slider-track {
 	background-color: #f7f7f7;
-	
-	
-	
-	
-	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#f9f9f9));
+	background-image: -webkit-linear-gradient(top, #f5f5f5, #f9f9f9);
+	background-image: -o-linear-gradient(top, #f5f5f5, #f9f9f9);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#f9f9f9));
+	background-image: linear-gradient(to bottom, #f5f5f5, #f9f9f9);
 	background-repeat: repeat-x;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F5F5F5', endColorstr='#F9F9F9',GradientType=0);
 	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
@@ -367,11 +367,11 @@ Version: 		1.0.0
 
 .slider-selection {
 	background-color: #f7f7f7;
-	
-	
-	
-	
-	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f9f9f9), to(#f5f5f5));
+	background-image: -webkit-linear-gradient(top, #f9f9f9, #f5f5f5);
+	background-image: -o-linear-gradient(top, #f9f9f9, #f5f5f5);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f5f5f5));
+	background-image: linear-gradient(to bottom, #f9f9f9, #f5f5f5);
 	background-repeat: repeat-x;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F9F9F9', endColorstr='#F5F5F5',GradientType=0);
 	-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
@@ -384,11 +384,11 @@ Version: 		1.0.0
 
 .slider-selection.tick-slider-selection {
 	background-color: #f7f7f7;
-	
-	
-	
-	
-	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#89cdef), to(#81bfde));
+	background-image: -webkit-linear-gradient(top, #89cdef, #81bfde);
+	background-image: -o-linear-gradient(top, #89cdef, #81bfde);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#89cdef), to(#81bfde));
+	background-image: linear-gradient(to bottom, #89cdef, #81bfde);
 	background-repeat: repeat-x;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#89CDEF', endColorstr='#81BFDE',GradientType=0);
 }
@@ -403,11 +403,11 @@ Version: 		1.0.0
 
 .slider-handle {
 	background-color: #0e90d2;
-	
-	
-	
-	
-	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#149bdf), to(#0480be));
+	background-image: -webkit-linear-gradient(top, #149bdf, #0480be);
+	background-image: -o-linear-gradient(top, #149bdf, #0480be);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#149bdf), to(#0480be));
+	background-image: linear-gradient(to bottom, #149bdf, #0480be);
 	background-repeat: repeat-x;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#149BDF', endColorstr='#0480BE',GradientType=0);
 	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
@@ -441,11 +441,11 @@ Version: 		1.0.0
 
 .slider-tick {
 	background-color: #f7f7f7;
-	
-	
-	
-	
-	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f9f9f9), to(#f5f5f5));
+	background-image: -webkit-linear-gradient(top, #f9f9f9, #f5f5f5);
+	background-image: -o-linear-gradient(top, #f9f9f9, #f5f5f5);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f5f5f5));
+	background-image: linear-gradient(to bottom, #f9f9f9, #f5f5f5);
 	background-repeat: repeat-x;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F9F9F9', endColorstr='#F5F5F5',GradientType=0);
 	-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
@@ -482,11 +482,11 @@ Version: 		1.0.0
 
 .slider-tick.in-selection {
 	background-color: #f7f7f7;
-	
-	
-	
-	
-	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#89cdef), to(#81bfde));
+	background-image: -webkit-linear-gradient(top, #89cdef, #81bfde);
+	background-image: -o-linear-gradient(top, #89cdef, #81bfde);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#89cdef), to(#81bfde));
+	background-image: linear-gradient(to bottom, #89cdef, #81bfde);
 	background-repeat: repeat-x;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#89CDEF', endColorstr='#81BFDE',GradientType=0);
 	opacity: 1;
@@ -1171,7 +1171,7 @@ body {
 }
 
 .mega-menus .dropdown-menu > li.dropdown-wide > a.car-1:before,.mega-menus .dropdown-menu > li.dropdown-wide > a.car-2:before,.mega-menus .dropdown-menu > li.dropdown-wide > a.car-3:before,.mega-menus .dropdown-menu > li.dropdown-wide > a.car-4:before,.mega-menus .dropdown-menu > li.dropdown-wide > a.car-5:before,.mega-menus .dropdown-menu > li.dropdown-wide > a.car-6:before {
-
+	/* background-image: url('../../img/car.png'); */
 }
 
 .mega-menus .dropdown-menu > li.dropdown-wide > a.car-1:before {
@@ -1532,19 +1532,19 @@ body {
 }
 
 .mega-menus .s-list.s-list-sprite.s-list-sprite-nfl > li > a {
-	
+	/* background-image: url(../../img/nfl.png); */
 }
 
 .mega-menus .s-list.s-list-sprite.s-list-sprite-nba > li > a {
-	
+	/* background-image: url(../../img/nba.png); */
 }
 
 .mega-menus .s-list.s-list-sprite.s-list-sprite-mlb > li > a {
-	
+	/* background-image: url(../../img/mlb.png); */
 }
 
 .mega-menus .s-list.s-list-sprite.s-list-sprite-flags > li > a {
-	
+	/* background-image: url(../../img/flags.png); */
 }
 
 .mega-menus .s-list.s-list-no-hover > li > a:hover {
@@ -5499,155 +5499,155 @@ pre {
 /******* parallax images styles *******/
 
 .visual-banner {
-	
+	/* background-image: url('../img/visual-14.jpg'); */
 }
 
 .visual-banner-v2 {
-	
+	/* background-image: url('../img/visual-02.jpg'); */
 }
 
 .visual-banner-v3 {
-	
+	/* background-image: url('../img/visual-small-06.jpg'); */
 }
 
 .visual-banner-v4 {
-	
+	/* background-image: url('../img/visual-03.jpg'); */
 }
 
 .visual-banner-v5 {
-	
+	/* background-image: url('../img/visual-04.jpg'); */
 }
 
 .visual-banner-v6 {
-	
+	/* background-image: url('../img/visual-small-07.jpg'); */
 }
 
 .visual-banner-v7 {
-	
+	/* background-image: url('../img/visual-small-08.jpg'); */
 }
 
 .visual-banner-v8 {
-	
+	/* background-image: url('../img/visual-small-09.jpg'); */
 }
 
 .visual-banner-v9 {
-	
+	/* background-image: url('../img/visual-small-10.jpg'); */
 }
 
 .visual-banner-v10 {
-	
+	/* background-image: url('../img/visual-small-11.jpg'); */
 }
 
 .visual-banner-v11 {
-	
+	/* background-image: url('../img/visual-small-12.jpg'); */
 }
 
 .visual-banner-v12 {
-	
+	/* background-image: url('../img/visual-small-13.jpg'); */
 }
 
 .visual-banner-v13 {
-	
+	/* background-image: url('../img/visual-small-14.jpg'); */
 }
 
 .visual-banner-v14 {
-	
+	/* background-image: url('../img/visual-small-15.jpg'); */
 }
 
 .visual-banner-v15 {
-	
+	/* background-image: url('../img/visual-small-16.jpg'); */
 }
 
 .visual-banner-v16 {
-	
+	/* background-image: url('../img/visual-small-17.jpg'); */
 }
 
 .visual-banner-v17 {
-	
+	/* background-image: url('../img/visual-small-18.jpg'); */
 }
 
 .visual-banner-v18 {
-	
+	/* background-image: url('../img/visual-small-19.jpg'); */
 }
 
 .visual-banner-v19 {
-	
-}
+	/* background-image: url('../img/visual-small-20.jpg');*/
+} 
 
 .visual-banner-v20 {
-	
+	/* background-image: url('../img/visual-small-21.jpg'); */
 }
 
 .visual-banner-v21 {
-	
+	/* background-image: url('../img/visual-small-22.jpg'); */
 }
 
 .visual-banner-v22 {
-	
+	/* background-image: url('../img/visual-15.jpg'); */
 }
 
 .visual-banner-v23 {
-	
+	/* background-image: url('../img/big-19.jpg'); */
 }
 
 .about-banner {
-	
+	/* background-image: url('../img/visual-small-01.jpg'); */
 }
 
 .portfolio-banner {
-	
+	/* background-image: url('../img/visual-small-02.jpg'); */
 }
 
 .portfolio-banner-v1 {
-	
+	/* background-image: url('../img/visual-small-04.jpg'); */
 }
 
 .portfolio-banner-v2 {
-	
+	/* background-image: url('../img/visual-small-05.jpg'); */
 }
 
 .quotation-block {
-	
+	/* background-image: url('../img/big-15.jpg'); */
 }
 
 .count-block {
-	
+	/* background-image: url('../img/visual-small-11.jpg'); */
 }
 
 .quotation-block-v3 {
-	
+	/* background-image: url('../img/big-06.jpg'); */
 }
 
 .quotation-block-v5 {
-	
+	/* background-image: url('../img/big-04.jpg'); */
 }
 
 .quotation-block-v6 {
-	
+	/* background-image: url('../img/big-09.jpg'); */
 }
 
 .quotation-block-v7 {
-	
+	/* background-image: url('../img/big-12.jpg'); */
 }
 
 .information-block {
-	
+	/* background-image: url('../img/visual-03.jpg'); */
 }
 
 .btn-wrapper-demo {
-	
+	/* background-image: url('../img/big-03.jpg'); */
 }
 
 .blog-default-banner {
-	
+	/* background-image: url('../img/blog-01.jpg'); */
 }
 
 .intro-banner {
-	
+	/* background-image: url('../img/intro-img/intro-banner-01.jpg'); */
 }
 
 .intro-footer-block {
-	
+	/* background-image: url('../img/Dest_B23516_39.jpg'); */
 }
 
 /*------------------------------------------------------------------
@@ -8479,14 +8479,14 @@ a.full-width-icon:hover .social-text {
 
 .datepicker table tr td.active,.datepicker table tr td.active:hover,.datepicker table tr td.active.disabled,.datepicker table tr td.active.disabled:hover,.datepicker table tr td.active:hover,.datepicker table tr td.active:hover:hover,.datepicker table tr td.active.disabled:hover,.datepicker table tr td.active.disabled:hover:hover,.datepicker table tr td.active:active,.datepicker table tr td.active:hover:active,.datepicker table tr td.active.disabled:active,.datepicker table tr td.active.disabled:hover:active,.datepicker table tr td.active.active,.datepicker table tr td.active:hover.active,.datepicker table tr td.active.disabled.active,.datepicker table tr td.active.disabled:hover.active,.datepicker table tr td.active.disabled,.datepicker table tr td.active:hover.disabled,.datepicker table tr td.active.disabled.disabled,.datepicker table tr td.active.disabled:hover.disabled,.datepicker table tr td.active[disabled],.datepicker table tr td.active:hover[disabled],.datepicker table tr td.active.disabled[disabled],.datepicker table tr td.active.disabled:hover[disabled],.datepicker table tr td.today,.datepicker table tr td.today:hover,.datepicker table tr td.today.disabled,.datepicker table tr td.today.disabled:hover,.datepicker table tr td.today:hover,.datepicker table tr td.today:hover:hover,.datepicker table tr td.today.disabled:hover,.datepicker table tr td.today.disabled:hover:hover,.datepicker table tr td.today:active,.datepicker table tr td.today:hover:active,.datepicker table tr td.today.disabled:active,.datepicker table tr td.today.disabled:hover:active,.datepicker table tr td.today.active,.datepicker table tr td.today:hover.active,.datepicker table tr td.today.disabled.active,.datepicker table tr td.today.disabled:hover.active,.datepicker table tr td.today.disabled,.datepicker table tr td.today:hover.disabled,.datepicker table tr td.today.disabled.disabled,.datepicker table tr td.today.disabled:hover.disabled,.datepicker table tr td.today[disabled],.datepicker table tr td.today:hover[disabled],.datepicker table tr td.today.disabled[disabled],.datepicker table tr td.today.disabled:hover[disabled] {
 	background: #5645ff;
-	
+	background-image: none;
 	color: #fff;
 }
 
 .datepicker table tr td.selected,.datepicker table tr td.selected:hover,.datepicker table tr td.selected.disabled,.datepicker table tr td.selected.disabled:hover {
 	background: #55565b;
 	color: #fff;
-	
+	background-image: none;
 }
 
 .datepicker .table-condensed > tbody > tr > td,.datepicker .table-condensed > tbody > tr > th,.datepicker .table-condensed > tfoot > tr > td,.datepicker .table-condensed > tfoot > tr > th,.datepicker .table-condensed > thead > tr > td,.datepicker .table-condensed > thead > tr > th {
@@ -10053,7 +10053,7 @@ a.full-width-icon:hover .social-text {
 }
 
 .footer-v3 .footer-map {
-	
+	/* background-image: url(../img/map-05.png); */
 	background-repeat: no-repeat;
 	background-position: center center;
 }

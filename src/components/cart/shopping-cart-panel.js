@@ -3,30 +3,15 @@ import { jsx } from "theme-ui";
 
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import useCheckDevice from "../../libs/isMobile";
 import useScroll from "../../libs/isScrolled";
 import useWindowSize from "../../libs/useWindowSize";
 import "./shopping-cart.css";
-// const products = [
-//   {
-//     name: "Product 1",
-//     price: 199,
-//     img: 'https://c4.wallpaperflare.com/wallpaper/664/252/56/dog-full-hd-desktop-download-wallpaper-preview.jpg',
-//     count: 1,
-//     slug: '/product-1'
-//   }, {
-//     name: "Product 2",
-//     price: 199,
-//     img: 'https://c4.wallpaperflare.com/wallpaper/664/252/56/dog-full-hd-desktop-download-wallpaper-preview.jpg',
-//     count: 5,
-//     slug: '/product-2'
-//   }
-// ]
 
 function ShoppingCart() {
-  // const [isOpenCart, setIsOpenCart] = useState(false);
   const isScrolled = useScroll(".navbar");
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useCheckDevice();
 
   const query = useStaticQuery(graphql`
     query ShoppingCartQuery {
@@ -57,32 +42,23 @@ function ShoppingCart() {
       elm.style.right = "0";
     }
   }
-  // const handleOpenCart = () => {
-  //   setIsOpenCart(true);
-  // };
-  // const handleCloseCart = () => {
-  //   setIsOpenCart(false);
-  // };
 
   const totalCart = () => {
     let totalPrice = 0;
 
-    for(let item of products){
-      totalPrice += item.price*item.count
+    for (let item of products) {
+      totalPrice += item.price * item.count;
     }
     return totalPrice.toFixed(2);
   };
-  useEffect(() => {
-    setIsMobile(windowSize.width <= 1024);
-
-  });
+  useEffect(() => {});
 
   return (
     <div className="cart">
       <button
         sx={{
           i: {
-            color: ((isScrolled&&!isMobile) || isMobile)  ? "#55565b" : "white",
+            color: (isScrolled && !isMobile) || isMobile ? "#55565b" : "white",
           },
         }}
         onFocus={ELMOutOfViewPort}
@@ -91,10 +67,7 @@ function ShoppingCart() {
       >
         <i className="custom-icon-cart"></i>
       </button>
-      <div
-        // style={{ display: isOpenCart ? "block" : "none" }}
-        className="cart__panel animate__animated animate__fadeIn"
-      >
+      <div className="cart__panel animate__animated animate__fadeIn">
         <div className="cart__top">
           <h2 className="cart__top-title">Shopping Cart</h2>
         </div>

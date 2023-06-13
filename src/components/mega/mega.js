@@ -1,19 +1,21 @@
 import { Link } from "gatsby";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import useCheckDevice from "../../libs/isMobile";
 import toUpperCase from "../../libs/toUpperCase";
-import "./mega.css";
 import useWindowSize from "../../libs/useWindowSize";
+import "./mega.css";
 function MegaMenu({ indexItem, data, activeMenu, handleMenuOpen }) {
   const isOpen = activeMenu === indexItem;
   let windowSize = useWindowSize();
-  const [isMobile, setIsMobile] = useState(false);
-
+  
+  const isMobile = useCheckDevice();
   const toggleMenu = () => {
     handleMenuOpen(indexItem);
   };
   useEffect(() => {
-    setIsMobile(windowSize.width <= 1024);
-  },[windowSize]);
+        
+        
+  });
   return (
     <>
       <a onClick={toggleMenu} href="#!" className="mega__toggle">

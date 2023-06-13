@@ -151,7 +151,10 @@
   color: #575757;
   font-size: 19px;
 }
-@media only screen and (max-width: 425px){
+@media only screen and (max-width: 768px){
+  .sidebar > .sidebar__toggle{
+    padding-right: 0;
+  }
   /* .sidebar{
     display: none;
   } */

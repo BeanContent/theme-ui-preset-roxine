@@ -1,16 +1,15 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
 import { Link } from "gatsby";
-import React, { useEffect, useState } from "react";
-import "./sidebar.css";
+import { useEffect, useState } from "react";
+import { jsx } from "theme-ui";
+import useCheckDevice from "../../libs/isMobile";
 import useScroll from "../../libs/isScrolled";
-import useWindowSize from "../../libs/useWindowSize";
+import "./sidebar.css";
 
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const isScrolled = useScroll(".navbar");
-  const [isMobile, setIsMobile] = useState(false);
-  const windowSize = useWindowSize();
+  const isMobile = useCheckDevice();
 
   const socialList = [
     {
@@ -69,7 +68,6 @@ function Sidebar() {
     setIsOpen(!isOpen);
   };
   useEffect(() => {
-    setIsMobile(windowSize.width <= 1024);
   });
   return (
     <div className="sidebar">

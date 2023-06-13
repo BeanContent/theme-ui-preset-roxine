@@ -1,0 +1,42 @@
+[
+  {
+    "name": "logo-1",
+
+    "image": "images/celebrities/logo-01.png"
+  },
+  {
+    "name": "logo-2",
+
+    "image": "images/celebrities/logo-02.png"
+  },
+  {
+    "name": "logo-3",
+
+    "image": "images/celebrities/logo-03.png"
+  },
+  {
+    "name": "logo-4",
+
+    "image": "images/celebrities/logo-02.png"
+  },
+  {
+    "name": "logo-5",
+
+    "image": "images/celebrities/logo-04.png"
+  },
+  {
+    "name": "logo-6",
+
+    "image": "images/celebrities/logo-03.png"
+  },
+  {
+    "name": "logo-7",
+
+    "image": "images/celebrities/logo-01.png"
+  },
+  {
+    "name": "logo-8",
+
+    "image": "images/celebrities/logo-02.png"
+  }
+]

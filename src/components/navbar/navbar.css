@@ -35,7 +35,8 @@
   /* line-height: 22.5px; */
   font-size: 12px;
 }
-.navbar .navbar__icon > button, .navbar .navbar__icon > div > button {
+.navbar .navbar__icon button,
+.navbar .navbar__icon div button {
   padding: var(--pd-navbar);
 }
 /* NAVBAR LEFT */
@@ -71,7 +72,10 @@
 /* REPONSIVE */
 @media screen and (min-width: 768px) and (max-width: 1280px) {
 }
-@media screen and (max-width: 768px) {
+@media only screen and (max-width) {
+  
+}
+@media only screen and (max-width: 768px) {
   .navbar {
     display: flex;
     align-items: center;
@@ -120,6 +124,9 @@
   .navbar .navbar__right .navbar__nav .navbar__nav-list .list__item > a {
     padding: 6.4px 15px;
     width: 100%;
+  }
+  .navbar .navbar__icon > div:last-child > button{
+    padding-right: 0;
   }
   .navbar__icon-cart {
     display: none;

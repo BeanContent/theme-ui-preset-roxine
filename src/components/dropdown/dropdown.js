@@ -7,18 +7,20 @@ import toUpperCase from "../../libs/toUpperCase";
 import useWindowSize from "../../libs/useWindowSize";
 import "./dropdown.css";
 import useScroll from "../../libs/isScrolled";
-
+import useCheckDevice from "../../libs/isMobile";
 const Dropdown = ({ indexItem, data, activeMenu, handleMenuOpen }) => {
-  // const [isActiveIndex, setIsActiveIndex] = useState(null);
+  
   const [localActiveMenu, setLocalActiveMenu] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
+  
+  const isMobile = useCheckDevice();
+
   const isScrolled = useScroll(".navbar");
   const isOpen = activeMenu === indexItem;
   let windowSize = useWindowSize();
-  // THIS WILL MOVE MENU IF MENU OUT OF SCREEN
+  
   function ELMOutOfViewPort(e) {
     e.stopPropagation();
-    // setIsActive(isActiveIndex === indexItem);
+    
     const dropdownMenu = e.target.nextElementSibling;
     const menuWidth = Math.floor(
       dropdownMenu.getBoundingClientRect().width +
@@ -36,7 +38,8 @@ const Dropdown = ({ indexItem, data, activeMenu, handleMenuOpen }) => {
     handleMenuOpen(indexItem);
   };
   useEffect(() => {
-    setIsMobile(windowSize.width <= 1024);
+      
+      
   });
 
   return (
@@ -53,9 +56,9 @@ const Dropdown = ({ indexItem, data, activeMenu, handleMenuOpen }) => {
       {isOpen}
       {
         <ul
-          // style={{
-          //   display: `${isActive && !isMobile ? "block" : "none"}`,
-          // }}
+          
+          
+          
           className={
             isOpen && isMobile
               ? "show dropdown__menu animate__animated animate__fadeIn"

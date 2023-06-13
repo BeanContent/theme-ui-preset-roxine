@@ -3,18 +3,20 @@ export const baseTheme = {
     initialColorModeName: "light",
   },
   colors: {
-    text: "#55565b",
-    primary: "#2812ff",
-    secondary: "#55565b",
-    accent: "#000",
-    hightlight: "#2812ff",
-    background: "#fff",
-    link: "#161716",
+    text: "#55565b", //Grey 1
+    primary: "#212121", //Black 0.7
+    secondary: "#f8f8f8", //Grey 0.5
+    accent: "#5645FF", //PurleBlue 1
+    hightlight: "#000000", //Black 1
+    background: "#fff", //White 1
+    link: "#55565b",
+    // link: "#5645FF",
     modes: {
       dark: {
         text: "white",
+        background: "#000000", //#201f30,
+        secondary: "#000000",
         link: "white",
-        background: "#202124", //#201f30
       },
     },
   },
@@ -29,9 +31,6 @@ export const baseTheme = {
     content: {
       color: "text",
     },
-    link: {
-      color: "link",
-    },
   },
   layouts: {
     container: {
@@ -40,9 +39,16 @@ export const baseTheme = {
     },
   },
   buttons: {
+    link: {
+      color: "link",
+      backgroundColor: "transparent",
+      "&:hover": {
+        color: "#5645FF",
+      },
+    },
     primary: {
       color: "white", // use the page background color for an inverted effect
-      backgroundColor: "#5645FF",
+      backgroundColor: "accent",
 
       "&:hover": {
         bg: "#56459f",

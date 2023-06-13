@@ -5,7 +5,7 @@ import Footer from "../footer/footer";
 import Navbar from "../navbar/navbar";
 
 function Layout({ children }) {
-  // let colorMode = useColorMode()[0];
+  
 
   return (
     <div
