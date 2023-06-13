@@ -87,7 +87,7 @@ function Footer() {
         <div className="footer__bottom">
           <div className="footer__bottom-release">
             <p className="release__info">
-              Copyright 2016 - Roxine - Multi Purpose Theme by Waituk
+              Copyright 2016 - Roxine - Multi Purpose Theme by DevCox
             </p>
           </div>
         </div>
