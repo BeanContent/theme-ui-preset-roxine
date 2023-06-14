@@ -4,7 +4,7 @@ import Celebrities from "../celebrities/celebrities";
 import Footer from "../footer/footer";
 import Navbar from "../navbar/navbar";
 
-function Layout({ children }) {
+function Layout({ children, className }) {
   
 
   return (
@@ -15,7 +15,7 @@ function Layout({ children }) {
       <header>
         <Navbar />
       </header>
-      <main>{children}</main>
+      <main className={className}>{children}</main>
       <Celebrities />
       <Footer />
     </div>

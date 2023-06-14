@@ -12,42 +12,42 @@ const dumData = [
   {
     name: "logo-1",
 
-    image: "../../images/celebrities/logo-01.png",
+    image: "images/celebrities/logo-01.png",
   },
   {
     name: "logo-2",
 
-    image: "../../images/celebrities/logo-02.png",
+    image: "images/celebrities/logo-02.png",
   },
   {
     name: "logo-3",
 
-    image: "../../images/celebrities/logo-03.png",
+    image: "images/celebrities/logo-03.png",
   },
   {
     name: "logo-4",
 
-    image: "../../images/celebrities/logo-02.png",
+    image: "images/celebrities/logo-02.png",
   },
   {
     name: "logo-5",
 
-    image: "../../images/celebrities/logo-04.png",
+    image: "images/celebrities/logo-04.png",
   },
   {
     name: "logo-6",
 
-    image: "../../images/celebrities/logo-03.png",
+    image: "images/celebrities/logo-03.png",
   },
   {
     name: "logo-7",
 
-    image: "../../images/celebrities/logo-01.png",
+    image: "images/celebrities/logo-01.png",
   },
   {
     name: "logo-8",
 
-    image: "../../images/celebrities/logo-02.png",
+    image: "images/celebrities/logo-02.png",
   },
 ];
 
@@ -90,12 +90,13 @@ function Celebrities() {
         modules={[Autoplay]}
       >
         {dumData.map((item, index) => {
+          console.log(`${__dirname}${item.image}`);
           return (
             <SwiperSlide key={index} className="celebrities__slide">
               <Image
                 className="celebrities__slide-img"
                 alt={item.name}
-                src={item.image}
+                src={`${__dirname}${item.image}`}
               />
             </SwiperSlide>
           );

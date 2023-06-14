@@ -6,7 +6,8 @@ import Breadcrumb from "../breadcrumb/breadcrumb";
 import { jsx } from "theme-ui";
 import { StaticImage } from "gatsby-plugin-image";
 import background from "../../images/backgrounds/marvin-meyer-SYTO3xs06fU-unsplash.jpg";
-const Banner = ({ title }) => {
+const Banner = ({ data }) => {
+  const { title, content } = data;
   return (
     <section
       style={{
@@ -15,7 +16,8 @@ const Banner = ({ title }) => {
       className="banner"
     >
       <div className="banner__wrapper">
-        <h1 className="banner__title">{toCapitalize(title)}</h1>
+        <h1 className="banner__title">{title && toCapitalize(title)}</h1>
+        {content && <p className="banner__content">{content}</p>}
         <div className="banner__breadcrumb">
           <Breadcrumb />
         </div>

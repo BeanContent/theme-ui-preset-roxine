@@ -12,7 +12,7 @@ import Story from "../components/story/story";
 import Team from "../components/team/team";
 import Testimonials from "../components/testimonials/testimonials-slider";
 import "../styles/global.css";
-const IndexPage = ({ data }) => {
+const HomePage = ({ data }) => {
   const culture = data.allContentfulWork.nodes[0];
   const story = data.allContentfulStory.nodes[0];
   const galleries = data.allContentfulGallery.nodes;
@@ -135,7 +135,7 @@ export const query = graphql`
   }
 `;
 
-export default IndexPage;
+export default HomePage;
 export const Head = () => {
   return (
     <>

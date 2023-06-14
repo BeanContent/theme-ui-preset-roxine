@@ -13,11 +13,11 @@ const Describe = ({ data }) => {
               if (goal.emphasize) {
                 return (
                   <span key={index} className="describe__title-emphasize">
-                    {toCapitalize(goal.name)}.{" "}
+                    {goal.name && toCapitalize(goal.name)}.{" "}
                   </span>
                 );
               } else {
-                return `${toCapitalize(goal.name)}. `;
+                return `${goal.name && toCapitalize(goal.name)}.${" "}`;
               }
             })}
           </h2>

@@ -7,10 +7,7 @@ import { Image, jsx } from "theme-ui";
 const AlternateItem = ({ item }) => {
   const { title, contents, image } = item;
   return (
-    <li
-      //   style={{ flexDirection: idx % 2 !== 0 && "row-reverse" }}
-      className="alternate__list-item"
-    >
+    <li className="alternate__list-item">
       <div className="item__col">
         <Image className="item__img" alt={title} src={image} />
       </div>
