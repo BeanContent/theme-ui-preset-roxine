@@ -16,9 +16,8 @@ import "./navbar.css";
 
 import useCheckDevice from "../../libs/isMobile";
 function Navbar() {
-  
   const [isOpenNavbar, setIsOpenNavbar] = useState(false);
-  
+
   const [activeMenu, setActiveMenu] = useState(null);
   const isMobile = useCheckDevice();
 
@@ -60,7 +59,7 @@ function Navbar() {
 
   const menu = data.allSite.nodes[0].siteMetadata.menu;
   const isScrolled = useScroll(".navbar");
-
+  console.log(useCheckDevice());
   const handleMenuOpen = (index) => {
     setActiveMenu((prevMenu) => (prevMenu === index ? null : index));
   };
@@ -98,14 +97,10 @@ function Navbar() {
     }
   }
 
-  useEffect(() => {
-    
-    
-    
-  });
+  useEffect(() => {});
 
   return (
-    <nav sx={{ backgroundColor: isScrolled && "white" }} className="navbar">
+    <nav sx={{ backgroundColor: (isScrolled || isMobile) && "white" }} className="navbar">
       <Container>
         <div sx={{ padding: "0 20px" }} className="navbar__wrapper">
           <div className="navbar__left">

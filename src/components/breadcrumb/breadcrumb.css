@@ -1,0 +1,27 @@
+.breadcrumb {
+  /* text-align: center; */
+}
+
+.breadcrumb .breadcrumb__list {
+  display: flex;
+}
+.breadcrumb .breadcrumb__list .breadcrumb__list-item .item__link {
+  color: #ffffff;
+  letter-spacing: 0.2em;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+}
+.breadcrumb
+  .breadcrumb__list
+  .breadcrumb__list-item
+  .item__link:hover {
+  color: #5546ff;
+}
+.breadcrumb
+  .breadcrumb__list
+  .breadcrumb__list-item:not(:last-child)
+  .item__link::after {
+  color: white;
+  content: "/";
+  padding: 0 1rem;
+}
+

@@ -1,5 +1,5 @@
 import "animate.css";
-import { Script, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import React, { Suspense } from "react";
 import Analysis from "../components/analysis/analysis";
 import Caption from "../components/caption/caption";
@@ -10,11 +10,9 @@ import Layout from "../components/layout/layout";
 import Quote from "../components/quote/quote";
 import Story from "../components/story/story";
 import Team from "../components/team/team";
-import "../styles/global.css";
-import useWindowSize from "../libs/useWindowSize";
 import Testimonials from "../components/testimonials/testimonials-slider";
+import "../styles/global.css";
 const IndexPage = ({ data }) => {
-  const windowSize = useWindowSize();
   const culture = data.allContentfulWork.nodes[0];
   const story = data.allContentfulStory.nodes[0];
   const galleries = data.allContentfulGallery.nodes;

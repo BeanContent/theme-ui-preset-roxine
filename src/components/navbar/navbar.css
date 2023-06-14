@@ -75,7 +75,7 @@
 @media only screen and (max-width) {
   
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .navbar {
     display: flex;
     align-items: center;
@@ -86,9 +86,9 @@
   }
   .navbar .navbar__brand {
     position: absolute;
-    bottom: 10px;
     left: 0;
     right: 0;
+    transform: translateY(60%);
     margin-left: auto;
     margin-right: auto;
     text-align: center;

@@ -592,14 +592,7 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
-    "gatsby-transformer-json",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "celebrities",
-        path: `${__dirname}/data/`,
-      },
-    },
+  
     // {
     //   resolve: "gatsby-plugin-react-i18next",
     //   options: {

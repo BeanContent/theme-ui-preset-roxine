@@ -6,33 +6,77 @@ import { graphql, useStaticQuery } from "gatsby";
 import "swiper/css/autoplay";
 import "./celebrities.css";
 import { Autoplay } from "swiper";
-import { jsx } from "theme-ui";
+import { Image, jsx } from "theme-ui";
+
+const dumData = [
+  {
+    name: "logo-1",
+
+    image: "../../images/celebrities/logo-01.png",
+  },
+  {
+    name: "logo-2",
+
+    image: "../../images/celebrities/logo-02.png",
+  },
+  {
+    name: "logo-3",
+
+    image: "../../images/celebrities/logo-03.png",
+  },
+  {
+    name: "logo-4",
+
+    image: "../../images/celebrities/logo-02.png",
+  },
+  {
+    name: "logo-5",
+
+    image: "../../images/celebrities/logo-04.png",
+  },
+  {
+    name: "logo-6",
+
+    image: "../../images/celebrities/logo-03.png",
+  },
+  {
+    name: "logo-7",
+
+    image: "../../images/celebrities/logo-01.png",
+  },
+  {
+    name: "logo-8",
+
+    image: "../../images/celebrities/logo-02.png",
+  },
+];
+
 function Celebrities() {
-  const query = useStaticQuery(graphql`
-    query {
-      allCelebritiesJson {
-        edges {
-          node {
-            image
-            name
-          }
-        }
-      }
-    }
-  `);
-  const data = query.allCelebritiesJson.edges;
+  // const query = useStaticQuery(graphql`
+  //   query {
+  //     allCelebritiesJson {
+  //       edges {
+  //         node {
+  //           image
+  //           name
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
+  // const data = query.allCelebritiesJson.edges;
   return (
     <section sx={{ backgroundColor: "background" }} className="celebrities">
       <Swiper
         breakpoints={{
           320: {
-            slidesPerView: "1",
+            slidesPerView: "2",
           },
           768: {
             slidesPerView: "3",
           },
           1024: {
-            slidesPerView: "4",
+            slidesPerView: "5",
           },
         }}
         slidesPerView="5"
@@ -45,14 +89,13 @@ function Celebrities() {
         className="celebrities__wrapper"
         modules={[Autoplay]}
       >
-        {data.map((item, index) => {
+        {dumData.map((item, index) => {
           return (
             <SwiperSlide key={index} className="celebrities__slide">
-              <img
-                sx={{ mixBlendMode: "hue" }}
+              <Image
                 className="celebrities__slide-img"
-                alt={item.node.name}
-                src={item.node.image}
+                alt={item.name}
+                src={item.image}
               />
             </SwiperSlide>
           );

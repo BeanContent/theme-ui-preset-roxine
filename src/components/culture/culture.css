@@ -4,7 +4,6 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  height: 100vh;
   z-index: 0;
 }
 
@@ -13,8 +12,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 150px;
-  padding: 0 15px;
+  margin: 0 1.5rem;
+  padding: 15rem 1.5rem;
 }
 
 .culture > .culture__container > * {
@@ -77,16 +76,3 @@
   font-size: clamp(12px, 1.2vw, 16px);
 }
 
-@media only screen and (max-width: 46.1875em) {
-  .culture__container {
-    padding: 0;
-    margin: 0 10px;
-  }
-}
-
-@media only screen and (min-width: 46.25em) and (max-width: 63.9365em) {
-  .culture__container {
-    padding: 0;
-    margin: 0 50px;
-  }
-}

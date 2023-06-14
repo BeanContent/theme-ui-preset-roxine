@@ -7,7 +7,7 @@ function Caption({ data }) {
   const bgImage = getImage(data.imageCaption.gatsbyImageData);
 
   return (
-    <div
+    <section
       style={{ backgroundImage: `url(${bgImage.images.fallback.src})` }}
       className="caption"
     >
@@ -29,7 +29,7 @@ function Caption({ data }) {
           {data.button}
         </a>
       </Container>
-    </div>
+    </section>
   );
 }
 
