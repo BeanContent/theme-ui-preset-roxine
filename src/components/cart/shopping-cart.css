@@ -1,0 +1,120 @@
+/* .navbar__nav-item:hover > .cart__panel {
+  display: grid;
+} */
+.cart {
+  position: relative;
+}
+.cart__panel {
+  display: none;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 10px 20px;
+  width: 20rem;
+  background: white;
+  z-index: 2;
+}
+.cart__btn:hover ~ .cart__panel,
+.cart__panel:hover {
+  display: block;
+}
+.cart__panel > .cart__top {
+  padding: 10px 0px;
+}
+
+.cart__panel > .cart__top > .cart__top-title {
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #55565b;
+}
+
+.cart__panel > .cart__middle {
+  display: grid;
+  grid-gap: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.cart__panel > .cart__bottom {
+  padding: 10px 0px;
+}
+
+.cart__panel > .cart__bottom > .cart__bottom-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart__panel > .cart__bottom > .cart__bottom-total > * {
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: 14.4px;
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #55565b;
+}
+
+.cart__panel > .cart__bottom > .cart__bottom-viewcart {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+  padding: 5px 0px;
+  font-size: 14px;
+  letter-spacing: 1.8px;
+  background: #5645ff;
+  color: #ffffff;
+}
+
+/* PRODUCT STYLE */
+.product {
+  display: flex;
+  /* margin-top: 5px; */
+  grid-template-columns: auto auto;
+  cursor: pointer;
+}
+.product > .product__left {
+  margin-right: 20px;
+}
+.product > .product__left > .product__img {
+  width: 60px;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.product > .product__right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: flex-end;
+}
+
+.product > .product__right > .product__info {
+  display: grid;
+  white-space: nowrap;
+}
+.product > .product__right > .product__info > * {
+  color: #55565b;
+}
+
+.product > .product__right > .product__info > .product__info-name {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.product > .product__right > .product__info > .product__info-price {
+  font-size: 11.5px;
+}
+.product > .product__right > .product__count {
+  justify-self: flex-end;
+  font-weight: bold;
+}
+.product > .product__right > .product__count > .product__count-number {
+  font-size: 10px;
+}
