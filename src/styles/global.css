@@ -1,0 +1,62 @@
+/* @import url('https://fonts.cdnfonts.com/css/poppins'); */
+body {
+  /* position: relative; */
+  /* overflow-x: hidden; */
+}
+:root {
+  --pd-navbar: 20px 16px;
+    font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #55565b;
+  margin-bottom: 16px;
+}
+.fa-shopping-cart,
+.fa-search {
+  color: white;
+}
+button {
+  all: unset;
+  display: block;
+  cursor: pointer;
+}
+input {
+  all: unset;
+  display: block;
+}
+i {
+  pointer-events: none;
+}
+.show {
+  display: block;
+}
+[class*="divider"] {
+  width: 120px;
+}
+section {
+  transition: 0.2s ease;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --pd-navbar: 0.4rem 15px;
+  }
+  /* .show {
+    display: block;
+    max-height: fit-content;
+  } */
+}

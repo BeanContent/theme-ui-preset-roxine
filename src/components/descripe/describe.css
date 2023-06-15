@@ -1,0 +1,29 @@
+.describe {
+}
+.describe .describe__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 1.5rem;
+  text-align: center;
+}
+.describe .describe__title {
+  font-size: clamp(2.4rem, 3vw, 4.8rem);
+  font-family: "Josefin Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  word-spacing: 0.3em;
+}
+.describe .describe__title .describe__title-emphasize {
+  color: #5645ff;
+}
+.describe .describe__content {
+  text-align: justify;
+  text-align-last: center;
+
+  margin-right: 0;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
+@media only screen and (min-width: 1024px) {
+  .describe .describe__content {
+    max-width: 100rem;
+  }
+}

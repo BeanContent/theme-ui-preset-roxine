@@ -1,0 +1,51 @@
+{
+  "name": "training-gatsby-2",
+  "version": "1.0.0",
+  "private": true,
+  "description": "training-gatsby-2",
+  "author": "xuantruongcox",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@mdx-js/react": "^2.3.0",
+    "@reach/router": "^1.3.4",
+    "@theme-ui/mdx": "^0.15.7",
+    "animate.css": "^4.1.1",
+    "browser-monads": "^1.0.0",
+    "dotenv": "^16.1.4",
+    "gatsby": "^5.3.3",
+    "gatsby-image": "^3.11.0",
+    "gatsby-plugin-gatsby-cloud": "^5.7.0",
+    "gatsby-plugin-i18n": "^1.0.1",
+    "gatsby-plugin-image": "^3.3.2",
+    "gatsby-plugin-react-i18next": "^3.0.1",
+    "gatsby-plugin-scroll-reveal": "^0.0.7",
+    "gatsby-plugin-sharp": "^5.3.2",
+    "gatsby-plugin-theme-ui": "^0.15.7",
+    "gatsby-source-contentful": "^8.3.1",
+    "gatsby-transformer-sharp": "^5.3.1",
+    "i18next": "^22.4.11",
+    "i18next-browser-languagedetector": "^7.0.1",
+    "i18next-http-backend": "^2.1.1",
+    "react": "^18.2.0",
+    "react-countup": "^6.4.2",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^12.2.0",
+    "react-intersection-observer": "^9.4.4",
+    "swiper": "^9.3.2",
+    "theme-ui": "^0.15.7",
+    "gatsby": "^5.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+
+  }
+}

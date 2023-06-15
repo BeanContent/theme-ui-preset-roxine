@@ -1,0 +1,213 @@
+/*
+Name: 			main
+Author: 		waituk - (http://www.waituk.net)
+Version: 		1.0.0
+*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. General styles and resets
+2. Bordered Document / .bordered-document
+3. Header / .main-header
+4. Banner
+5. Buttons / .btn
+6. Search form / .search-form
+7. Content block / .content-block
+8. Block Heading / .block-heading
+9. Parallax / .parallax
+10. Gallery list / .gallery-list
+11. Team / .team-container
+12. Count Block / .count-block
+13. Testimonial / .testimonial-container
+14. Logo Block / .logo-container
+15. Newsletter form / .waituk_newsletter-form
+16. Post Block / .post-grid
+17. Elements / .demo-wrapper
+18. Blog
+19. Footer
+20. Utilities
+-----------------------------------------------------*/
+
+/*------------------------------------------------------------------
+1. General styles and resets
+-------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i');
+@import 'https://fonts.googleapis.com/css?family=Just+Another+Hand';
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+
+.content-links,.filter-nav,.social-network,.content-list,.pricing-box-v1 .plan-features ul,.icon-lists ul,.nav-wrap ul.side-nav,.nav-wrap .header-links ul,.white-overlay .nav-wrap ul.side-nav,.white-overlay .nav-wrap .header-links ul,.tag-block ul,.blog-lists .blog-list-items,.instagram-widget ul,.footer-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* preloader styles */
+
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	white-space: nowrap;
+	text-align: center;
+	background-color: #fff;
+	z-index: 9999999999;
+	-webkit-transition: all linear .3s;
+	-o-transition: all linear .3s;
+	transition: all linear .3s;
+}
+
+.preloader:before {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+	margin-right: -.25em;
+}
+
+.preloader.loaded {
+	opacity: 0;
+	visibility: hidden;
+	z-index: -1;
+}
+
+.preloader .holder {
+	display: inline-block;
+	vertical-align: middle;
+	white-space: normal;
+}
+
+/*coffee cup*/
+
+.coffee_cup {
+	width: 40px;
+	height: 50px;
+	border: 2px #5645ff solid;
+	border-radius: 0 0 5px 5px;
+	position: relative;
+	margin: 36px auto;
+}
+
+.coffee_cup:after,.coffee_cup:before {
+	position: absolute;
+	content: '';
+}
+
+.coffee_cup:after {
+	width: 10px;
+	height: 20px;
+	border: 2px #5645ff solid;
+	border-left: none;
+	border-radius: 0 20px 20px 0;
+	left: 40px;
+	top: 5px;
+}
+
+.coffee_cup:before {
+	width: 3px;
+	height: 10px;
+	background-color: #5645ff;
+	top: -16px;
+	left: 12px;
+	-webkit-box-shadow: 5px 0 0 0 #5645ff, 5px -5px 0 0 #5645ff, 10px 0 0 0 #5645ff;
+	box-shadow: 5px 0 0 0 #5645ff, 5px -5px 0 0 #5645ff, 10px 0 0 0 #5645ff;
+	-webkit-animation: steam 700ms linear infinite alternate;
+	-o-animation: steam 700ms linear infinite alternate;
+	animation: steam 700ms linear infinite alternate;
+}
+
+.content-links,.filter-nav,.social-network,.content-list,.pricing-box-v1 .plan-features ul,.icon-lists ul,.nav-wrap ul.side-nav,.nav-wrap .header-links ul,.white-overlay .nav-wrap ul.side-nav,.white-overlay .nav-wrap .header-links ul,.tag-block ul,.blog-lists .blog-list-items,.instagram-widget ul,.footer-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/*! =========================================================
+ * bootstrap-slider.js
+ *
+ * Maintainers:
+ *		Kyle Kemp
+ *			- Twitter: @seiyria
+ *			- Github:  seiyria
+ *		Rohit Kalkur
+ *			- Twitter: @Rovolutionary
+ *			- Github:  rovolution
+ *
+ * =========================================================
+ *
+ * bootstrap-slider is released under the MIT License
+ * Copyright (c) 2017 Kyle Kemp, Rohit Kalkur, and contributors
+ * 
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the "Software"), to deal in the Software without
+ * restriction, including without limitation the rights to use,
+ * copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following
+ * conditions:
+ * 
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * ========================================================= */
+
+
+/* general style for html and body */
+
+html,body {
+	height: 100%;
+	font-size: inherit;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: none;
+}
+
+
+
+a {
+	color: #5645ff;
+	text-decoration: none;
+	outline: none;
+	-webkit-transition: all linear .2s;
+	-o-transition: all linear .2s;
+	transition: all linear .2s;
+}
+
+a:hover,a:focus {
+	text-decoration: none;
+	outline: none;
+	color: #2812ff;
+}
+
+/* typography */
+
+body {
+	font-weight: 400;
+	font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	letter-spacing: .0625rem;
+	color: #55565b;
+	line-height: 2.1;
+}
+
+
+
+
+
+
