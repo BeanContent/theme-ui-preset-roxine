@@ -1,0 +1,74 @@
+.quote {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  padding: 10rem;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-origin: content-box;
+  background-size: cover;
+  background-position-y: 3em;
+  overflow: auto;
+  text-align: center;
+  z-index: 1;
+}
+
+.quote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.quote > .quote__title > .quote__title-text {
+  display: inline-block;
+  font-size: clamp(20px, 3vw, 30px);
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.quote > .quote__content > .quote__content-text {
+  display: inline-block;
+  font-size: clamp(30px, 5vw, 50px);
+  font-weight: 700;
+  color: white;
+}
+
+.quote > .quote__link > .quote__link-text {
+  display: block;
+  font-size: clamp(15px, 2vw, 20px);
+  white-space: nowrap;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 40px;
+  padding: 10px 3em;
+  border-radius: 5px;
+  width: fit-content;
+  text-align: center;
+
+  /* color: white; */
+}
+
+@media only screen and (max-width: 46.1875em) {
+  .quote {
+    padding: 5em 2em;
+  }
+  .quote > .quote__link > .quote__link-text {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 46.25em) and (max-width: 63.9365em) {
+}

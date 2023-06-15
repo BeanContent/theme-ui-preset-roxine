@@ -1,0 +1,47 @@
+.analysis {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #333335;
+}
+.analysis .analysis__wrapper {
+}
+.analysis .analysis__list {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.analysis .analysis__list .analysis__list-item {
+  text-align: center;
+}
+.analysis .analysis__list .analysis__list-item .item__wrapper {
+  padding: 90px 0;
+}
+.analysis .analysis__list .analysis__list-item * {
+  /* margin-bottom: 0; */
+  line-height: 1;
+  color: white;
+}
+.analysis .analysis__list .analysis__list-item span {
+  display: block;
+  line-height: 2;
+  font-size: 50px;
+}
+.analysis .analysis__list .analysis__list-item .item__quantity {
+  font-size: 1.9rem;
+  margin-bottom: 0;
+}
+.analysis .analysis__list .analysis__list-item .item__name {
+  font-size: 1.15rem;
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .analysis .analysis__list {
+    grid-template-columns: auto auto;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .analysis .analysis__list {
+    grid-template-columns: auto ;
+  }
+}
+
