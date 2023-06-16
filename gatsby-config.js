@@ -3,7 +3,7 @@
  */
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "production"}`,
+  path: `.env.${process.env.NODE_ENV+'.local' || "production.local"}`,
 });
 
 const languages = { "en-US": "en", "vi-VN": "vi" };
