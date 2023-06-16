@@ -1,0 +1,69 @@
+.slider__container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 50px 0;
+}
+
+.slider__card {
+  display: flex;
+  /* display: none !important;  */
+  height: 100vh !important;
+  min-height: 525px;
+  max-height: 600px;
+}
+
+.slider__card-image {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -5;
+}
+
+.slider__card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 30px 30px;
+  width: 100%;
+  align-self: flex-end;
+  background-color: #5645ff;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.5s ease-in-out;
+}
+
+.slider__card-content > * {
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+}
+.slider__card-content > .content__name {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: clamp(14px, 1.5vw, 18px);
+}
+
+.slider__card-content > .content__pos {
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(12px, 1.5vw, 14px);
+}
+
+.slider__card:hover > .slider__card-content {
+  transform: translateY(-100px);
+  opacity: 1;
+}
+
+/* ANIMATION */
+
+@media only screen and (max-width: 46.1875em) {
+}
+
+@media only screen and (min-width: 46.25em) and (max-width: 63.9365em) {
+}

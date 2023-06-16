@@ -1,0 +1,16 @@
+.celebrities{
+    padding: 10rem 2%;
+}
+
+.swiper-wrapper{
+  transition-timing-function : ease-in-out;
+}
+.celebrities__slide{
+    display: flex;
+    justify-content: center;
+}
+@media only screen and (min-width: 768px) {
+    .celebrities{
+    padding: 10rem 5%;
+}
+}

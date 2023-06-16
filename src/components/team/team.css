@@ -1,0 +1,43 @@
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 0;
+}
+
+.team__head {
+    width: 100%;
+    max-width: 1120px;
+}
+.team__foot{
+    width: 100%;
+    max-width: 1120px;
+}
+.team__foot-content{
+    font-size: clamp(12px, 1vw, 14px);
+}
+
+.team__head-subtitle {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: clamp(18px, 2.4vw, 30px);
+}
+
+.team__head-title {
+    text-transform: uppercase;
+    font-size: clamp(24px, 3.6vw, 48px);
+}
+
+.team__head-des {
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(14px, 1.5vw, 18px);
+}
+
+@media only screen and (max-width: 46.1875em) {
+    .team{
+        padding: 50px 10px;
+    }
+}
+
+@media only screen and (min-width: 46.25em) and (max-width: 63.9365em) {}
