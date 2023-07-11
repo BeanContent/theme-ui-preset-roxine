@@ -103,7 +103,7 @@ const navbar = {
                     }
                 },
                 'a': {
-                    color: 'text',
+                    color: '#55565B',
                     display: 'flex',
                     padding: '1rem 2rem',
                     fontSize: "1.2rem",

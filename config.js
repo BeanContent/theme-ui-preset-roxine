@@ -1,7 +1,5 @@
 const config = {
-    config: {
-        initialColorModeName: "light",
-    },
+
     styles: {
         root: {
             fontSize: "10px",
@@ -94,14 +92,9 @@ const config = {
         highlight: "#000000", //Black 1
         background: "#fff", //White 1
         emphasize: "#5645FF",
-        modes: {
-            dark: {
-                text: "white",
-                background: "#000000", //#201f30,
-                secondary: "#000000",
-                link: "white",
-            },
-        },
+        // modes: {
+         
+        // },
     },
     space: [
         ".3rem",
