@@ -1,6 +1,10 @@
 const dropdown = {
     menu: {
         display: 'none',
+        background: 'rgb(248,248,248)',
+        'ul': {
+            background: 'rgb(240,240,240)',
+        },
         item: {
             position: 'relative',
             '@media only screen and (min-width: 1024px)': {
@@ -20,7 +24,7 @@ const dropdown = {
             bg: 'white',
             minWidth: '200px',
             maxWidth: '300px',
-            
+
         }
     },
     toggler: {

@@ -118,22 +118,10 @@ const navbar = {
                     }
                 },
             },
-            "ul": {
-                background: 'rgb(248,248,248)',
-                "ul": {
-                    bg: 'rgb(240,240,240)',
-                }
-            },
             '@media only screen and (min-width: 1024px)': {
                 display: 'flex',
                 margin: '0rem',
                 height: '100%',
-                "ul": {
-                    background: '#fff',
-                    "ul": {
-                        bg: '#fff',
-                    }
-                },
                 'ul:hover': {
                     display: 'block'
                 }
