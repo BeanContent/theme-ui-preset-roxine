@@ -24,7 +24,7 @@ const caption = {
     color: "white",
     textTransform: "uppercase",
     "@media screen and (min-width: 768px)": {
-      marginBottom: "-2rem",
+      marginBottom: "2rem",
     },
   },
   h1: {
@@ -33,7 +33,7 @@ const caption = {
     letterSpacing: 3,
     color: "white",
     textTransform: "uppercase",
-    marginTop: "0px",
+    marginTop: "1rem",
     marginBottom: "0rem",
   },
   p: {
